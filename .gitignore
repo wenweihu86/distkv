@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+dfs-java-parent.iml
+dfs-meta-server/dfs-meta-server.iml
+dfs-proxy-server/dfs-proxy-server.iml
+dfs-store-server/dfs-store-server.iml
