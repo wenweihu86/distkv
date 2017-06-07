@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package store;
+option java_package = "com.github.wenweihu86.distkv.api";
+option java_outer_classname = "Common";
+
+enum ResCode {
+    RES_CODE_SUCCESS = 0;
+    RES_CODE_FAIL = 1;
+}
+
+message BaseResponse {
+    ResCode res_code = 1;
+    string res_msg = 2;
+}

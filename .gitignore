@@ -1,6 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-distkv-parent.iml
-distkv-meta-server/distkv-meta-server.iml
-distkv-proxy-server/distkv-proxy-server.iml
-distkv-store-server/distkv-store-server.iml
+*.iml
+target
