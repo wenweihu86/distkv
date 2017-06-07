@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-dfs-java-parent.iml
-dfs-meta-server/dfs-meta-server.iml
-dfs-proxy-server/dfs-proxy-server.iml
-dfs-store-server/dfs-store-server.iml
+distkv-parent.iml
+distkv-meta-server/distkv-meta-server.iml
+distkv-proxy-server/distkv-proxy-server.iml
+distkv-store-server/distkv-store-server.iml
