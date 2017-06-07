@@ -1,8 +1,8 @@
 syntax="proto3";
 
-package store;
+package api;
 option java_package = "com.github.wenweihu86.distkv.api";
-option java_outer_classname = "StoreAPI";
+option java_outer_classname = "StoreMessage";
 
 import "common.proto";
 

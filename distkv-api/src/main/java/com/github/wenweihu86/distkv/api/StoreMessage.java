@@ -3,8 +3,8 @@
 
 package com.github.wenweihu86.distkv.api;
 
-public final class StoreAPI {
-  private StoreAPI() {}
+public final class StoreMessage {
+  private StoreMessage() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -92,14 +92,14 @@ public final class StoreAPI {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetRequest_descriptor;
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetRequest_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.class, com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.Builder.class);
+              com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.class, com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
@@ -163,10 +163,10 @@ public final class StoreAPI {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreAPI.SetRequest)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreMessage.SetRequest)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.StoreAPI.SetRequest other = (com.github.wenweihu86.distkv.api.StoreAPI.SetRequest) obj;
+      com.github.wenweihu86.distkv.api.StoreMessage.SetRequest other = (com.github.wenweihu86.distkv.api.StoreMessage.SetRequest) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -192,58 +192,58 @@ public final class StoreAPI {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -255,7 +255,7 @@ public final class StoreAPI {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreAPI.SetRequest prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreMessage.SetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -275,20 +275,20 @@ public final class StoreAPI {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:store.SetRequest)
-        com.github.wenweihu86.distkv.api.StoreAPI.SetRequestOrBuilder {
+        com.github.wenweihu86.distkv.api.StoreMessage.SetRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetRequest_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetRequest_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.class, com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.Builder.class);
+                com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.class, com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -314,23 +314,23 @@ public final class StoreAPI {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetRequest_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetRequest_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.SetRequest getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.StoreMessage.SetRequest getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.SetRequest build() {
-        com.github.wenweihu86.distkv.api.StoreAPI.SetRequest result = buildPartial();
+      public com.github.wenweihu86.distkv.api.StoreMessage.SetRequest build() {
+        com.github.wenweihu86.distkv.api.StoreMessage.SetRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.SetRequest buildPartial() {
-        com.github.wenweihu86.distkv.api.StoreAPI.SetRequest result = new com.github.wenweihu86.distkv.api.StoreAPI.SetRequest(this);
+      public com.github.wenweihu86.distkv.api.StoreMessage.SetRequest buildPartial() {
+        com.github.wenweihu86.distkv.api.StoreMessage.SetRequest result = new com.github.wenweihu86.distkv.api.StoreMessage.SetRequest(this);
         result.key_ = key_;
         result.value_ = value_;
         onBuilt();
@@ -364,16 +364,16 @@ public final class StoreAPI {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.StoreAPI.SetRequest) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.StoreAPI.SetRequest)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.StoreMessage.SetRequest) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.StoreMessage.SetRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreAPI.SetRequest other) {
-        if (other == com.github.wenweihu86.distkv.api.StoreAPI.SetRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreMessage.SetRequest other) {
+        if (other == com.github.wenweihu86.distkv.api.StoreMessage.SetRequest.getDefaultInstance()) return this;
         if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
           setKey(other.getKey());
         }
@@ -392,11 +392,11 @@ public final class StoreAPI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.StoreAPI.SetRequest parsedMessage = null;
+        com.github.wenweihu86.distkv.api.StoreMessage.SetRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.StoreAPI.SetRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.StoreMessage.SetRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -478,12 +478,12 @@ public final class StoreAPI {
     }
 
     // @@protoc_insertion_point(class_scope:store.SetRequest)
-    private static final com.github.wenweihu86.distkv.api.StoreAPI.SetRequest DEFAULT_INSTANCE;
+    private static final com.github.wenweihu86.distkv.api.StoreMessage.SetRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreAPI.SetRequest();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreMessage.SetRequest();
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetRequest getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -506,7 +506,7 @@ public final class StoreAPI {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.StoreAPI.SetRequest getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.StoreMessage.SetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -523,11 +523,11 @@ public final class StoreAPI {
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes();
+    com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes();
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder();
+    com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder();
   }
   /**
    * Protobuf type {@code store.SetResponse}
@@ -569,11 +569,11 @@ public final class StoreAPI {
               break;
             }
             case 10: {
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder subBuilder = null;
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder subBuilder = null;
               if (baseRes_ != null) {
                 subBuilder = baseRes_.toBuilder();
               }
-              baseRes_ = input.readMessage(com.github.wenweihu86.distkv.api.Common.BaseResponse.parser(), extensionRegistry);
+              baseRes_ = input.readMessage(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(baseRes_);
                 baseRes_ = subBuilder.buildPartial();
@@ -594,18 +594,18 @@ public final class StoreAPI {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetResponse_descriptor;
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetResponse_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.class, com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.Builder.class);
+              com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.class, com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.Builder.class);
     }
 
     public static final int BASE_RES_FIELD_NUMBER = 1;
-    private com.github.wenweihu86.distkv.api.Common.BaseResponse baseRes_;
+    private com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse baseRes_;
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
@@ -615,13 +615,13 @@ public final class StoreAPI {
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes() {
-      return baseRes_ == null ? com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes() {
+      return baseRes_ == null ? com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
     }
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder() {
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder() {
       return getBaseRes();
     }
 
@@ -661,10 +661,10 @@ public final class StoreAPI {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreAPI.SetResponse)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreMessage.SetResponse)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.StoreAPI.SetResponse other = (com.github.wenweihu86.distkv.api.StoreAPI.SetResponse) obj;
+      com.github.wenweihu86.distkv.api.StoreMessage.SetResponse other = (com.github.wenweihu86.distkv.api.StoreMessage.SetResponse) obj;
 
       boolean result = true;
       result = result && (hasBaseRes() == other.hasBaseRes());
@@ -691,58 +691,58 @@ public final class StoreAPI {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -754,7 +754,7 @@ public final class StoreAPI {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreAPI.SetResponse prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreMessage.SetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -774,20 +774,20 @@ public final class StoreAPI {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:store.SetResponse)
-        com.github.wenweihu86.distkv.api.StoreAPI.SetResponseOrBuilder {
+        com.github.wenweihu86.distkv.api.StoreMessage.SetResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetResponse_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.class, com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.Builder.class);
+                com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.class, com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -815,23 +815,23 @@ public final class StoreAPI {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_SetResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_SetResponse_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.SetResponse getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.StoreMessage.SetResponse getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.SetResponse build() {
-        com.github.wenweihu86.distkv.api.StoreAPI.SetResponse result = buildPartial();
+      public com.github.wenweihu86.distkv.api.StoreMessage.SetResponse build() {
+        com.github.wenweihu86.distkv.api.StoreMessage.SetResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.SetResponse buildPartial() {
-        com.github.wenweihu86.distkv.api.StoreAPI.SetResponse result = new com.github.wenweihu86.distkv.api.StoreAPI.SetResponse(this);
+      public com.github.wenweihu86.distkv.api.StoreMessage.SetResponse buildPartial() {
+        com.github.wenweihu86.distkv.api.StoreMessage.SetResponse result = new com.github.wenweihu86.distkv.api.StoreMessage.SetResponse(this);
         if (baseResBuilder_ == null) {
           result.baseRes_ = baseRes_;
         } else {
@@ -868,16 +868,16 @@ public final class StoreAPI {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.StoreAPI.SetResponse) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.StoreAPI.SetResponse)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.StoreMessage.SetResponse) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.StoreMessage.SetResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreAPI.SetResponse other) {
-        if (other == com.github.wenweihu86.distkv.api.StoreAPI.SetResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreMessage.SetResponse other) {
+        if (other == com.github.wenweihu86.distkv.api.StoreMessage.SetResponse.getDefaultInstance()) return this;
         if (other.hasBaseRes()) {
           mergeBaseRes(other.getBaseRes());
         }
@@ -893,11 +893,11 @@ public final class StoreAPI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.StoreAPI.SetResponse parsedMessage = null;
+        com.github.wenweihu86.distkv.api.StoreMessage.SetResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.StoreAPI.SetResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.StoreMessage.SetResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -907,9 +907,9 @@ public final class StoreAPI {
         return this;
       }
 
-      private com.github.wenweihu86.distkv.api.Common.BaseResponse baseRes_ = null;
+      private com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse baseRes_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder> baseResBuilder_;
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> baseResBuilder_;
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
@@ -919,9 +919,9 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes() {
         if (baseResBuilder_ == null) {
-          return baseRes_ == null ? com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+          return baseRes_ == null ? com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
         } else {
           return baseResBuilder_.getMessage();
         }
@@ -929,7 +929,7 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public Builder setBaseRes(com.github.wenweihu86.distkv.api.Common.BaseResponse value) {
+      public Builder setBaseRes(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse value) {
         if (baseResBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -946,7 +946,7 @@ public final class StoreAPI {
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       public Builder setBaseRes(
-          com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder builderForValue) {
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder builderForValue) {
         if (baseResBuilder_ == null) {
           baseRes_ = builderForValue.build();
           onChanged();
@@ -959,11 +959,11 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public Builder mergeBaseRes(com.github.wenweihu86.distkv.api.Common.BaseResponse value) {
+      public Builder mergeBaseRes(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse value) {
         if (baseResBuilder_ == null) {
           if (baseRes_ != null) {
             baseRes_ =
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.newBuilder(baseRes_).mergeFrom(value).buildPartial();
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.newBuilder(baseRes_).mergeFrom(value).buildPartial();
           } else {
             baseRes_ = value;
           }
@@ -991,7 +991,7 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder getBaseResBuilder() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder getBaseResBuilder() {
         
         onChanged();
         return getBaseResFieldBuilder().getBuilder();
@@ -999,23 +999,23 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder() {
         if (baseResBuilder_ != null) {
           return baseResBuilder_.getMessageOrBuilder();
         } else {
           return baseRes_ == null ?
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
         }
       }
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder> 
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> 
           getBaseResFieldBuilder() {
         if (baseResBuilder_ == null) {
           baseResBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder>(
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder>(
                   getBaseRes(),
                   getParentForChildren(),
                   isClean());
@@ -1038,12 +1038,12 @@ public final class StoreAPI {
     }
 
     // @@protoc_insertion_point(class_scope:store.SetResponse)
-    private static final com.github.wenweihu86.distkv.api.StoreAPI.SetResponse DEFAULT_INSTANCE;
+    private static final com.github.wenweihu86.distkv.api.StoreMessage.SetResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreAPI.SetResponse();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreMessage.SetResponse();
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.SetResponse getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.StoreMessage.SetResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1066,7 +1066,7 @@ public final class StoreAPI {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.StoreAPI.SetResponse getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.StoreMessage.SetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1139,14 +1139,14 @@ public final class StoreAPI {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetRequest_descriptor;
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetRequest_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.class, com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.Builder.class);
+              com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.class, com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
@@ -1194,10 +1194,10 @@ public final class StoreAPI {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreAPI.GetRequest)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreMessage.GetRequest)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.StoreAPI.GetRequest other = (com.github.wenweihu86.distkv.api.StoreAPI.GetRequest) obj;
+      com.github.wenweihu86.distkv.api.StoreMessage.GetRequest other = (com.github.wenweihu86.distkv.api.StoreMessage.GetRequest) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -1219,58 +1219,58 @@ public final class StoreAPI {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1282,7 +1282,7 @@ public final class StoreAPI {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreAPI.GetRequest prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreMessage.GetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1302,20 +1302,20 @@ public final class StoreAPI {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:store.GetRequest)
-        com.github.wenweihu86.distkv.api.StoreAPI.GetRequestOrBuilder {
+        com.github.wenweihu86.distkv.api.StoreMessage.GetRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetRequest_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetRequest_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.class, com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.Builder.class);
+                com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.class, com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1339,23 +1339,23 @@ public final class StoreAPI {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetRequest_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetRequest_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.GetRequest getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.StoreMessage.GetRequest getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.GetRequest build() {
-        com.github.wenweihu86.distkv.api.StoreAPI.GetRequest result = buildPartial();
+      public com.github.wenweihu86.distkv.api.StoreMessage.GetRequest build() {
+        com.github.wenweihu86.distkv.api.StoreMessage.GetRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.GetRequest buildPartial() {
-        com.github.wenweihu86.distkv.api.StoreAPI.GetRequest result = new com.github.wenweihu86.distkv.api.StoreAPI.GetRequest(this);
+      public com.github.wenweihu86.distkv.api.StoreMessage.GetRequest buildPartial() {
+        com.github.wenweihu86.distkv.api.StoreMessage.GetRequest result = new com.github.wenweihu86.distkv.api.StoreMessage.GetRequest(this);
         result.key_ = key_;
         onBuilt();
         return result;
@@ -1388,16 +1388,16 @@ public final class StoreAPI {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.StoreAPI.GetRequest) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.StoreAPI.GetRequest)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.StoreMessage.GetRequest) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.StoreMessage.GetRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreAPI.GetRequest other) {
-        if (other == com.github.wenweihu86.distkv.api.StoreAPI.GetRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreMessage.GetRequest other) {
+        if (other == com.github.wenweihu86.distkv.api.StoreMessage.GetRequest.getDefaultInstance()) return this;
         if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
           setKey(other.getKey());
         }
@@ -1413,11 +1413,11 @@ public final class StoreAPI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.StoreAPI.GetRequest parsedMessage = null;
+        com.github.wenweihu86.distkv.api.StoreMessage.GetRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.StoreAPI.GetRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.StoreMessage.GetRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1470,12 +1470,12 @@ public final class StoreAPI {
     }
 
     // @@protoc_insertion_point(class_scope:store.GetRequest)
-    private static final com.github.wenweihu86.distkv.api.StoreAPI.GetRequest DEFAULT_INSTANCE;
+    private static final com.github.wenweihu86.distkv.api.StoreMessage.GetRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreAPI.GetRequest();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreMessage.GetRequest();
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetRequest getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1498,7 +1498,7 @@ public final class StoreAPI {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.StoreAPI.GetRequest getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.StoreMessage.GetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1515,11 +1515,11 @@ public final class StoreAPI {
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes();
+    com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes();
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder();
+    com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder();
 
     /**
      * <code>optional bytes value = 2;</code>
@@ -1567,11 +1567,11 @@ public final class StoreAPI {
               break;
             }
             case 10: {
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder subBuilder = null;
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder subBuilder = null;
               if (baseRes_ != null) {
                 subBuilder = baseRes_.toBuilder();
               }
-              baseRes_ = input.readMessage(com.github.wenweihu86.distkv.api.Common.BaseResponse.parser(), extensionRegistry);
+              baseRes_ = input.readMessage(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(baseRes_);
                 baseRes_ = subBuilder.buildPartial();
@@ -1597,18 +1597,18 @@ public final class StoreAPI {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetResponse_descriptor;
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetResponse_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.class, com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.Builder.class);
+              com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.class, com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.Builder.class);
     }
 
     public static final int BASE_RES_FIELD_NUMBER = 1;
-    private com.github.wenweihu86.distkv.api.Common.BaseResponse baseRes_;
+    private com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse baseRes_;
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
@@ -1618,13 +1618,13 @@ public final class StoreAPI {
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes() {
-      return baseRes_ == null ? com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes() {
+      return baseRes_ == null ? com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
     }
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder() {
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder() {
       return getBaseRes();
     }
 
@@ -1680,10 +1680,10 @@ public final class StoreAPI {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreAPI.GetResponse)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreMessage.GetResponse)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.StoreAPI.GetResponse other = (com.github.wenweihu86.distkv.api.StoreAPI.GetResponse) obj;
+      com.github.wenweihu86.distkv.api.StoreMessage.GetResponse other = (com.github.wenweihu86.distkv.api.StoreMessage.GetResponse) obj;
 
       boolean result = true;
       result = result && (hasBaseRes() == other.hasBaseRes());
@@ -1714,58 +1714,58 @@ public final class StoreAPI {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1777,7 +1777,7 @@ public final class StoreAPI {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreAPI.GetResponse prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreMessage.GetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1797,20 +1797,20 @@ public final class StoreAPI {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:store.GetResponse)
-        com.github.wenweihu86.distkv.api.StoreAPI.GetResponseOrBuilder {
+        com.github.wenweihu86.distkv.api.StoreMessage.GetResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetResponse_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.class, com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.Builder.class);
+                com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.class, com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1840,23 +1840,23 @@ public final class StoreAPI {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_GetResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_GetResponse_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.GetResponse getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.StoreMessage.GetResponse getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.GetResponse build() {
-        com.github.wenweihu86.distkv.api.StoreAPI.GetResponse result = buildPartial();
+      public com.github.wenweihu86.distkv.api.StoreMessage.GetResponse build() {
+        com.github.wenweihu86.distkv.api.StoreMessage.GetResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.GetResponse buildPartial() {
-        com.github.wenweihu86.distkv.api.StoreAPI.GetResponse result = new com.github.wenweihu86.distkv.api.StoreAPI.GetResponse(this);
+      public com.github.wenweihu86.distkv.api.StoreMessage.GetResponse buildPartial() {
+        com.github.wenweihu86.distkv.api.StoreMessage.GetResponse result = new com.github.wenweihu86.distkv.api.StoreMessage.GetResponse(this);
         if (baseResBuilder_ == null) {
           result.baseRes_ = baseRes_;
         } else {
@@ -1894,16 +1894,16 @@ public final class StoreAPI {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.StoreAPI.GetResponse) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.StoreAPI.GetResponse)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.StoreMessage.GetResponse) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.StoreMessage.GetResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreAPI.GetResponse other) {
-        if (other == com.github.wenweihu86.distkv.api.StoreAPI.GetResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreMessage.GetResponse other) {
+        if (other == com.github.wenweihu86.distkv.api.StoreMessage.GetResponse.getDefaultInstance()) return this;
         if (other.hasBaseRes()) {
           mergeBaseRes(other.getBaseRes());
         }
@@ -1922,11 +1922,11 @@ public final class StoreAPI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.StoreAPI.GetResponse parsedMessage = null;
+        com.github.wenweihu86.distkv.api.StoreMessage.GetResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.StoreAPI.GetResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.StoreMessage.GetResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1936,9 +1936,9 @@ public final class StoreAPI {
         return this;
       }
 
-      private com.github.wenweihu86.distkv.api.Common.BaseResponse baseRes_ = null;
+      private com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse baseRes_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder> baseResBuilder_;
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> baseResBuilder_;
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
@@ -1948,9 +1948,9 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes() {
         if (baseResBuilder_ == null) {
-          return baseRes_ == null ? com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+          return baseRes_ == null ? com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
         } else {
           return baseResBuilder_.getMessage();
         }
@@ -1958,7 +1958,7 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public Builder setBaseRes(com.github.wenweihu86.distkv.api.Common.BaseResponse value) {
+      public Builder setBaseRes(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse value) {
         if (baseResBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1975,7 +1975,7 @@ public final class StoreAPI {
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       public Builder setBaseRes(
-          com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder builderForValue) {
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder builderForValue) {
         if (baseResBuilder_ == null) {
           baseRes_ = builderForValue.build();
           onChanged();
@@ -1988,11 +1988,11 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public Builder mergeBaseRes(com.github.wenweihu86.distkv.api.Common.BaseResponse value) {
+      public Builder mergeBaseRes(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse value) {
         if (baseResBuilder_ == null) {
           if (baseRes_ != null) {
             baseRes_ =
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.newBuilder(baseRes_).mergeFrom(value).buildPartial();
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.newBuilder(baseRes_).mergeFrom(value).buildPartial();
           } else {
             baseRes_ = value;
           }
@@ -2020,7 +2020,7 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder getBaseResBuilder() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder getBaseResBuilder() {
         
         onChanged();
         return getBaseResFieldBuilder().getBuilder();
@@ -2028,23 +2028,23 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder() {
         if (baseResBuilder_ != null) {
           return baseResBuilder_.getMessageOrBuilder();
         } else {
           return baseRes_ == null ?
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
         }
       }
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder> 
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> 
           getBaseResFieldBuilder() {
         if (baseResBuilder_ == null) {
           baseResBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder>(
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder>(
                   getBaseRes(),
                   getParentForChildren(),
                   isClean());
@@ -2096,12 +2096,12 @@ public final class StoreAPI {
     }
 
     // @@protoc_insertion_point(class_scope:store.GetResponse)
-    private static final com.github.wenweihu86.distkv.api.StoreAPI.GetResponse DEFAULT_INSTANCE;
+    private static final com.github.wenweihu86.distkv.api.StoreMessage.GetResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreAPI.GetResponse();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreMessage.GetResponse();
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.GetResponse getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.StoreMessage.GetResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2124,7 +2124,7 @@ public final class StoreAPI {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.StoreAPI.GetResponse getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.StoreMessage.GetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2197,14 +2197,14 @@ public final class StoreAPI {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteRequest_descriptor;
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteRequest_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.class, com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.Builder.class);
+              com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.class, com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
@@ -2252,10 +2252,10 @@ public final class StoreAPI {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest other = (com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest) obj;
+      com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest other = (com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -2277,58 +2277,58 @@ public final class StoreAPI {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2340,7 +2340,7 @@ public final class StoreAPI {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2360,20 +2360,20 @@ public final class StoreAPI {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:store.DeleteRequest)
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequestOrBuilder {
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteRequest_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteRequest_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.class, com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.Builder.class);
+                com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.class, com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2397,23 +2397,23 @@ public final class StoreAPI {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteRequest_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteRequest_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest build() {
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest result = buildPartial();
+      public com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest build() {
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest buildPartial() {
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest result = new com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest(this);
+      public com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest buildPartial() {
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest result = new com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest(this);
         result.key_ = key_;
         onBuilt();
         return result;
@@ -2446,16 +2446,16 @@ public final class StoreAPI {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest other) {
-        if (other == com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest other) {
+        if (other == com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest.getDefaultInstance()) return this;
         if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
           setKey(other.getKey());
         }
@@ -2471,11 +2471,11 @@ public final class StoreAPI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest parsedMessage = null;
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2528,12 +2528,12 @@ public final class StoreAPI {
     }
 
     // @@protoc_insertion_point(class_scope:store.DeleteRequest)
-    private static final com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest DEFAULT_INSTANCE;
+    private static final com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest();
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2556,7 +2556,7 @@ public final class StoreAPI {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.StoreAPI.DeleteRequest getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.StoreMessage.DeleteRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2573,11 +2573,11 @@ public final class StoreAPI {
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes();
+    com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes();
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder();
+    com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder();
   }
   /**
    * Protobuf type {@code store.DeleteResponse}
@@ -2619,11 +2619,11 @@ public final class StoreAPI {
               break;
             }
             case 10: {
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder subBuilder = null;
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder subBuilder = null;
               if (baseRes_ != null) {
                 subBuilder = baseRes_.toBuilder();
               }
-              baseRes_ = input.readMessage(com.github.wenweihu86.distkv.api.Common.BaseResponse.parser(), extensionRegistry);
+              baseRes_ = input.readMessage(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(baseRes_);
                 baseRes_ = subBuilder.buildPartial();
@@ -2644,18 +2644,18 @@ public final class StoreAPI {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteResponse_descriptor;
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteResponse_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.class, com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.Builder.class);
+              com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.class, com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.Builder.class);
     }
 
     public static final int BASE_RES_FIELD_NUMBER = 1;
-    private com.github.wenweihu86.distkv.api.Common.BaseResponse baseRes_;
+    private com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse baseRes_;
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
@@ -2665,13 +2665,13 @@ public final class StoreAPI {
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes() {
-      return baseRes_ == null ? com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes() {
+      return baseRes_ == null ? com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
     }
     /**
      * <code>optional .store.BaseResponse base_res = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder() {
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder() {
       return getBaseRes();
     }
 
@@ -2711,10 +2711,10 @@ public final class StoreAPI {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse other = (com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse) obj;
+      com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse other = (com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse) obj;
 
       boolean result = true;
       result = result && (hasBaseRes() == other.hasBaseRes());
@@ -2741,58 +2741,58 @@ public final class StoreAPI {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2804,7 +2804,7 @@ public final class StoreAPI {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2824,20 +2824,20 @@ public final class StoreAPI {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:store.DeleteResponse)
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponseOrBuilder {
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteResponse_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.class, com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.Builder.class);
+                com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.class, com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2865,23 +2865,23 @@ public final class StoreAPI {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.internal_static_store_DeleteResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.StoreMessage.internal_static_store_DeleteResponse_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse build() {
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse result = buildPartial();
+      public com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse build() {
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse buildPartial() {
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse result = new com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse(this);
+      public com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse buildPartial() {
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse result = new com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse(this);
         if (baseResBuilder_ == null) {
           result.baseRes_ = baseRes_;
         } else {
@@ -2918,16 +2918,16 @@ public final class StoreAPI {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse other) {
-        if (other == com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse other) {
+        if (other == com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse.getDefaultInstance()) return this;
         if (other.hasBaseRes()) {
           mergeBaseRes(other.getBaseRes());
         }
@@ -2943,11 +2943,11 @@ public final class StoreAPI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse parsedMessage = null;
+        com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2957,9 +2957,9 @@ public final class StoreAPI {
         return this;
       }
 
-      private com.github.wenweihu86.distkv.api.Common.BaseResponse baseRes_ = null;
+      private com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse baseRes_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder> baseResBuilder_;
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> baseResBuilder_;
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
@@ -2969,9 +2969,9 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse getBaseRes() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getBaseRes() {
         if (baseResBuilder_ == null) {
-          return baseRes_ == null ? com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+          return baseRes_ == null ? com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
         } else {
           return baseResBuilder_.getMessage();
         }
@@ -2979,7 +2979,7 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public Builder setBaseRes(com.github.wenweihu86.distkv.api.Common.BaseResponse value) {
+      public Builder setBaseRes(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse value) {
         if (baseResBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2996,7 +2996,7 @@ public final class StoreAPI {
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       public Builder setBaseRes(
-          com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder builderForValue) {
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder builderForValue) {
         if (baseResBuilder_ == null) {
           baseRes_ = builderForValue.build();
           onChanged();
@@ -3009,11 +3009,11 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public Builder mergeBaseRes(com.github.wenweihu86.distkv.api.Common.BaseResponse value) {
+      public Builder mergeBaseRes(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse value) {
         if (baseResBuilder_ == null) {
           if (baseRes_ != null) {
             baseRes_ =
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.newBuilder(baseRes_).mergeFrom(value).buildPartial();
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.newBuilder(baseRes_).mergeFrom(value).buildPartial();
           } else {
             baseRes_ = value;
           }
@@ -3041,7 +3041,7 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder getBaseResBuilder() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder getBaseResBuilder() {
         
         onChanged();
         return getBaseResFieldBuilder().getBuilder();
@@ -3049,23 +3049,23 @@ public final class StoreAPI {
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder getBaseResOrBuilder() {
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder getBaseResOrBuilder() {
         if (baseResBuilder_ != null) {
           return baseResBuilder_.getMessageOrBuilder();
         } else {
           return baseRes_ == null ?
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance() : baseRes_;
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance() : baseRes_;
         }
       }
       /**
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder> 
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> 
           getBaseResFieldBuilder() {
         if (baseResBuilder_ == null) {
           baseResBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.wenweihu86.distkv.api.Common.BaseResponse, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder, com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder>(
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder>(
                   getBaseRes(),
                   getParentForChildren(),
                   isClean());
@@ -3088,12 +3088,12 @@ public final class StoreAPI {
     }
 
     // @@protoc_insertion_point(class_scope:store.DeleteResponse)
-    private static final com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse DEFAULT_INSTANCE;
+    private static final com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse();
     }
 
-    public static com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3116,7 +3116,7 @@ public final class StoreAPI {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.StoreAPI.DeleteResponse getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.StoreMessage.DeleteResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3168,9 +3168,9 @@ public final class StoreAPI {
       "\013GetResponse\022%\n\010base_res\030\001 \001(\0132\023.store.B" +
       "aseResponse\022\r\n\005value\030\002 \001(\014\"\034\n\rDeleteRequ" +
       "est\022\013\n\003key\030\001 \001(\014\"7\n\016DeleteResponse\022%\n\010ba" +
-      "se_res\030\001 \001(\0132\023.store.BaseResponseB,\n com" +
-      ".github.wenweihu86.distkv.apiB\010StoreAPIb" +
-      "\006proto3"
+      "se_res\030\001 \001(\0132\023.store.BaseResponseB0\n com" +
+      ".github.wenweihu86.distkv.apiB\014StoreMess" +
+      "ageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3183,7 +3183,7 @@ public final class StoreAPI {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.wenweihu86.distkv.api.Common.getDescriptor(),
+          com.github.wenweihu86.distkv.api.CommonMessage.getDescriptor(),
         }, assigner);
     internal_static_store_SetRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3221,7 +3221,7 @@ public final class StoreAPI {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_store_DeleteResponse_descriptor,
         new java.lang.String[] { "BaseRes", });
-    com.github.wenweihu86.distkv.api.Common.getDescriptor();
+    com.github.wenweihu86.distkv.api.CommonMessage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

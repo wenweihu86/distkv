@@ -3,8 +3,8 @@
 
 package com.github.wenweihu86.distkv.api;
 
-public final class Common {
-  private Common() {}
+public final class CommonMessage {
+  private CommonMessage() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -15,7 +15,7 @@ public final class Common {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code store.ResCode}
+   * Protobuf enum {@code api.ResCode}
    */
   public enum ResCode
       implements com.google.protobuf.ProtocolMessageEnum {
@@ -86,7 +86,7 @@ public final class Common {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.Common.getDescriptor().getEnumTypes().get(0);
+      return com.github.wenweihu86.distkv.api.CommonMessage.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ResCode[] VALUES = values();
@@ -109,21 +109,21 @@ public final class Common {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:store.ResCode)
+    // @@protoc_insertion_point(enum_scope:api.ResCode)
   }
 
   public interface BaseResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:store.BaseResponse)
+      // @@protoc_insertion_point(interface_extends:api.BaseResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .store.ResCode res_code = 1;</code>
+     * <code>optional .api.ResCode res_code = 1;</code>
      */
     int getResCodeValue();
     /**
-     * <code>optional .store.ResCode res_code = 1;</code>
+     * <code>optional .api.ResCode res_code = 1;</code>
      */
-    com.github.wenweihu86.distkv.api.Common.ResCode getResCode();
+    com.github.wenweihu86.distkv.api.CommonMessage.ResCode getResCode();
 
     /**
      * <code>optional string res_msg = 2;</code>
@@ -136,11 +136,11 @@ public final class Common {
         getResMsgBytes();
   }
   /**
-   * Protobuf type {@code store.BaseResponse}
+   * Protobuf type {@code api.BaseResponse}
    */
   public  static final class BaseResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:store.BaseResponse)
+      // @@protoc_insertion_point(message_implements:api.BaseResponse)
       BaseResponseOrBuilder {
     // Use BaseResponse.newBuilder() to construct.
     private BaseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -201,30 +201,30 @@ public final class Common {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.wenweihu86.distkv.api.Common.internal_static_store_BaseResponse_descriptor;
+      return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_BaseResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.wenweihu86.distkv.api.Common.internal_static_store_BaseResponse_fieldAccessorTable
+      return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_BaseResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.wenweihu86.distkv.api.Common.BaseResponse.class, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder.class);
+              com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.class, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder.class);
     }
 
     public static final int RES_CODE_FIELD_NUMBER = 1;
     private int resCode_;
     /**
-     * <code>optional .store.ResCode res_code = 1;</code>
+     * <code>optional .api.ResCode res_code = 1;</code>
      */
     public int getResCodeValue() {
       return resCode_;
     }
     /**
-     * <code>optional .store.ResCode res_code = 1;</code>
+     * <code>optional .api.ResCode res_code = 1;</code>
      */
-    public com.github.wenweihu86.distkv.api.Common.ResCode getResCode() {
-      com.github.wenweihu86.distkv.api.Common.ResCode result = com.github.wenweihu86.distkv.api.Common.ResCode.valueOf(resCode_);
-      return result == null ? com.github.wenweihu86.distkv.api.Common.ResCode.UNRECOGNIZED : result;
+    public com.github.wenweihu86.distkv.api.CommonMessage.ResCode getResCode() {
+      com.github.wenweihu86.distkv.api.CommonMessage.ResCode result = com.github.wenweihu86.distkv.api.CommonMessage.ResCode.valueOf(resCode_);
+      return result == null ? com.github.wenweihu86.distkv.api.CommonMessage.ResCode.UNRECOGNIZED : result;
     }
 
     public static final int RES_MSG_FIELD_NUMBER = 2;
@@ -273,7 +273,7 @@ public final class Common {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (resCode_ != com.github.wenweihu86.distkv.api.Common.ResCode.RES_CODE_SUCCESS.getNumber()) {
+      if (resCode_ != com.github.wenweihu86.distkv.api.CommonMessage.ResCode.RES_CODE_SUCCESS.getNumber()) {
         output.writeEnum(1, resCode_);
       }
       if (!getResMsgBytes().isEmpty()) {
@@ -286,7 +286,7 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      if (resCode_ != com.github.wenweihu86.distkv.api.Common.ResCode.RES_CODE_SUCCESS.getNumber()) {
+      if (resCode_ != com.github.wenweihu86.distkv.api.CommonMessage.ResCode.RES_CODE_SUCCESS.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, resCode_);
       }
@@ -303,10 +303,10 @@ public final class Common {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.wenweihu86.distkv.api.Common.BaseResponse)) {
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse)) {
         return super.equals(obj);
       }
-      com.github.wenweihu86.distkv.api.Common.BaseResponse other = (com.github.wenweihu86.distkv.api.Common.BaseResponse) obj;
+      com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse other = (com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse) obj;
 
       boolean result = true;
       result = result && resCode_ == other.resCode_;
@@ -331,58 +331,58 @@ public final class Common {
       return hash;
     }
 
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(byte[] data)
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseDelimitedFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse parseFrom(
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -394,7 +394,7 @@ public final class Common {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.wenweihu86.distkv.api.Common.BaseResponse prototype) {
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -409,25 +409,25 @@ public final class Common {
       return builder;
     }
     /**
-     * Protobuf type {@code store.BaseResponse}
+     * Protobuf type {@code api.BaseResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:store.BaseResponse)
-        com.github.wenweihu86.distkv.api.Common.BaseResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.BaseResponse)
+        com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.wenweihu86.distkv.api.Common.internal_static_store_BaseResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_BaseResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.wenweihu86.distkv.api.Common.internal_static_store_BaseResponse_fieldAccessorTable
+        return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_BaseResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.wenweihu86.distkv.api.Common.BaseResponse.class, com.github.wenweihu86.distkv.api.Common.BaseResponse.Builder.class);
+                com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.class, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder.class);
       }
 
-      // Construct using com.github.wenweihu86.distkv.api.Common.BaseResponse.newBuilder()
+      // Construct using com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -453,23 +453,23 @@ public final class Common {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.wenweihu86.distkv.api.Common.internal_static_store_BaseResponse_descriptor;
+        return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_BaseResponse_descriptor;
       }
 
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse getDefaultInstanceForType() {
-        return com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance();
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance();
       }
 
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse build() {
-        com.github.wenweihu86.distkv.api.Common.BaseResponse result = buildPartial();
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse build() {
+        com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.wenweihu86.distkv.api.Common.BaseResponse buildPartial() {
-        com.github.wenweihu86.distkv.api.Common.BaseResponse result = new com.github.wenweihu86.distkv.api.Common.BaseResponse(this);
+      public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse buildPartial() {
+        com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse result = new com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse(this);
         result.resCode_ = resCode_;
         result.resMsg_ = resMsg_;
         onBuilt();
@@ -503,16 +503,16 @@ public final class Common {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.wenweihu86.distkv.api.Common.BaseResponse) {
-          return mergeFrom((com.github.wenweihu86.distkv.api.Common.BaseResponse)other);
+        if (other instanceof com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.wenweihu86.distkv.api.Common.BaseResponse other) {
-        if (other == com.github.wenweihu86.distkv.api.Common.BaseResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse other) {
+        if (other == com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.getDefaultInstance()) return this;
         if (other.resCode_ != 0) {
           setResCodeValue(other.getResCodeValue());
         }
@@ -532,11 +532,11 @@ public final class Common {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.wenweihu86.distkv.api.Common.BaseResponse parsedMessage = null;
+        com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.wenweihu86.distkv.api.Common.BaseResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -548,13 +548,13 @@ public final class Common {
 
       private int resCode_ = 0;
       /**
-       * <code>optional .store.ResCode res_code = 1;</code>
+       * <code>optional .api.ResCode res_code = 1;</code>
        */
       public int getResCodeValue() {
         return resCode_;
       }
       /**
-       * <code>optional .store.ResCode res_code = 1;</code>
+       * <code>optional .api.ResCode res_code = 1;</code>
        */
       public Builder setResCodeValue(int value) {
         resCode_ = value;
@@ -562,16 +562,16 @@ public final class Common {
         return this;
       }
       /**
-       * <code>optional .store.ResCode res_code = 1;</code>
+       * <code>optional .api.ResCode res_code = 1;</code>
        */
-      public com.github.wenweihu86.distkv.api.Common.ResCode getResCode() {
-        com.github.wenweihu86.distkv.api.Common.ResCode result = com.github.wenweihu86.distkv.api.Common.ResCode.valueOf(resCode_);
-        return result == null ? com.github.wenweihu86.distkv.api.Common.ResCode.UNRECOGNIZED : result;
+      public com.github.wenweihu86.distkv.api.CommonMessage.ResCode getResCode() {
+        com.github.wenweihu86.distkv.api.CommonMessage.ResCode result = com.github.wenweihu86.distkv.api.CommonMessage.ResCode.valueOf(resCode_);
+        return result == null ? com.github.wenweihu86.distkv.api.CommonMessage.ResCode.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .store.ResCode res_code = 1;</code>
+       * <code>optional .api.ResCode res_code = 1;</code>
        */
-      public Builder setResCode(com.github.wenweihu86.distkv.api.Common.ResCode value) {
+      public Builder setResCode(com.github.wenweihu86.distkv.api.CommonMessage.ResCode value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -581,7 +581,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>optional .store.ResCode res_code = 1;</code>
+       * <code>optional .api.ResCode res_code = 1;</code>
        */
       public Builder clearResCode() {
         
@@ -669,16 +669,16 @@ public final class Common {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:store.BaseResponse)
+      // @@protoc_insertion_point(builder_scope:api.BaseResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:store.BaseResponse)
-    private static final com.github.wenweihu86.distkv.api.Common.BaseResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.BaseResponse)
+    private static final com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.Common.BaseResponse();
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse();
     }
 
-    public static com.github.wenweihu86.distkv.api.Common.BaseResponse getDefaultInstance() {
+    public static com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -701,17 +701,17 @@ public final class Common {
       return PARSER;
     }
 
-    public com.github.wenweihu86.distkv.api.Common.BaseResponse getDefaultInstanceForType() {
+    public com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_store_BaseResponse_descriptor;
+    internal_static_api_BaseResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_store_BaseResponse_fieldAccessorTable;
+      internal_static_api_BaseResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -721,11 +721,11 @@ public final class Common {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014common.proto\022\005store\"A\n\014BaseResponse\022 \n" +
-      "\010res_code\030\001 \001(\0162\016.store.ResCode\022\017\n\007res_m" +
-      "sg\030\002 \001(\t*2\n\007ResCode\022\024\n\020RES_CODE_SUCCESS\020" +
-      "\000\022\021\n\rRES_CODE_FAIL\020\001B*\n com.github.wenwe" +
-      "ihu86.distkv.apiB\006Commonb\006proto3"
+      "\n\014common.proto\022\003api\"?\n\014BaseResponse\022\036\n\010r" +
+      "es_code\030\001 \001(\0162\014.api.ResCode\022\017\n\007res_msg\030\002" +
+      " \001(\t*2\n\007ResCode\022\024\n\020RES_CODE_SUCCESS\020\000\022\021\n" +
+      "\rRES_CODE_FAIL\020\001B1\n com.github.wenweihu8" +
+      "6.distkv.apiB\rCommonMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -739,11 +739,11 @@ public final class Common {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_store_BaseResponse_descriptor =
+    internal_static_api_BaseResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_store_BaseResponse_fieldAccessorTable = new
+    internal_static_api_BaseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_store_BaseResponse_descriptor,
+        internal_static_api_BaseResponse_descriptor,
         new java.lang.String[] { "ResCode", "ResMsg", });
   }
 
