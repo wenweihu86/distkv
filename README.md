@@ -3,4 +3,4 @@
 
 # 架构图（正在开发中...）
 
-![distkv架构图](https://github.com/wenweihu86/distkv-java/blob/master/docs/distkv-arch.png)
+![distkv架构图](https://github.com/wenweihu86/distkv/blob/master/docs/distkv-arch.png)
