@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.wenweihu86.dfs</groupId>
-    <artifactId>dfs-meta-server</artifactId>
+    <groupId>com.github.wenweihu86.distkv</groupId>
+    <artifactId>distkv-meta-server</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>dfs-meta-server</name>
+    <name>distkv-meta-server</name>
     <url>http://maven.apache.org</url>
 
     <properties>

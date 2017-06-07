@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.wenweihu86.dfs</groupId>
-    <artifactId>dfs-java-parent</artifactId>
+    <artifactId>distkv-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>dfs-java-parent</name>
+    <name>distkv-parent</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -15,9 +15,9 @@
     </properties>
 
     <modules>
-        <module>dfs-proxy-server</module>
-        <module>dfs-meta-server</module>
-        <module>dfs-store-server</module>
+        <module>distkv-proxy-server</module>
+        <module>distkv-meta-server</module>
+        <module>distkv-store-server</module>
     </modules>
 
 </project>
