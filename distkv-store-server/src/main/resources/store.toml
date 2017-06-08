@@ -1,0 +1,21 @@
+data_dir = "./data"
+
+[local_server]
+ip = "127.0.0.1"
+port = 8101
+id = 1
+
+[[servers]]
+ip = "127.0.0.1"
+port = 8101
+id = 1
+
+[[servers]]
+ip = "127.0.0.1"
+port = 8102
+id = 2
+
+[[servers]]
+ip = "127.0.0.1"
+port = 8103
+id = 3

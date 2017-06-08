@@ -1011,7 +1011,7 @@ public final class StoreMessage {
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> 
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder>
           getBaseResFieldBuilder() {
         if (baseResBuilder_ == null) {
           baseResBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2040,7 +2040,7 @@ public final class StoreMessage {
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> 
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder>
           getBaseResFieldBuilder() {
         if (baseResBuilder_ == null) {
           baseResBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3061,7 +3061,7 @@ public final class StoreMessage {
        * <code>optional .store.BaseResponse base_res = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder> 
+          com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponse.Builder, com.github.wenweihu86.distkv.api.CommonMessage.BaseResponseOrBuilder>
           getBaseResFieldBuilder() {
         if (baseResBuilder_ == null) {
           baseResBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
