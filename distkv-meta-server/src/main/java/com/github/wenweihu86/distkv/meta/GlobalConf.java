@@ -1,4 +1,4 @@
-package com.github.wenweihu86.distkv.store;
+package com.github.wenweihu86.distkv.meta;
 
 import com.github.wenweihu86.raft.proto.RaftMessage;
 import com.moandjiezana.toml.Toml;

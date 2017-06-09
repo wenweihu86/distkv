@@ -1,0 +1,33 @@
+syntax="proto3";
+
+package api;
+option java_package = "com.github.wenweihu86.distkv.api";
+option java_outer_classname = "MetaMessage";
+
+import "common.proto";
+
+message SetRequest {
+    int64 key_sign = 1; // key整数签名
+    int32 group_id = 2; // 集群组id，每一组leader/followers集群都是一个集群组
+}
+
+message SetResponse {
+    BaseResponse base_res = 1;
+}
+
+message GetRequest {
+    int64 key_sign = 1; // key整数签名
+}
+
+message GetResponse {
+    BaseResponse base_res = 1;
+    int32 group_id = 2; // 集群组id，每一组leader/followers集群都是一个集群组
+}
+
+message DeleteRequest {
+    int64 key_sign = 1; // key整数签名
+}
+
+message DeleteResponse {
+    BaseResponse base_res = 1;
+}
