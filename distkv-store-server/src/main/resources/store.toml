@@ -2,20 +2,20 @@ data_dir = "./data"
 
 [local_server]
 ip = "127.0.0.1"
-port = 8101
+port = 8201
 id = 1
 
 [[servers]]
 ip = "127.0.0.1"
-port = 8101
+port = 8201
 id = 1
 
 [[servers]]
 ip = "127.0.0.1"
-port = 8102
+port = 8202
 id = 2
 
 [[servers]]
 ip = "127.0.0.1"
-port = 8103
+port = 8203
 id = 3

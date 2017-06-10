@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JMX_PORT=18101
+JMX_PORT=18001
 GC_LOG=./logs/gc.log
 #jvm config
 JAVA_BASE_OPTS=" -Djava.awt.headless=true -Dfile.encoding=UTF-8 "
@@ -26,4 +26,4 @@ JAVA_OPTS=" $JAVA_BASE_OPTS $JAVA_MEM_OPTS $JAVA_JMX_OPTS $JAVA_GC_OPTS $JAVA_CP
 
 RUNJAVA="$JAVA_HOME/bin/java"
 
-$RUNJAVA $JAVA_CP com.github.wenweihu86.distkv.meta.MetaMain
+$RUNJAVA $JAVA_CP com.github.wenweihu86.distkv.proxy.ProxyMain

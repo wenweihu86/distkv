@@ -8,7 +8,7 @@ import "common.proto";
 
 message SetRequest {
     int64 key_sign = 1; // key整数签名
-    int32 group_id = 2; // 集群组id，每一组leader/followers集群都是一个集群组
+    int32 sharding_index = 2; // 分片id，每一组leader/followers都是一个分片
 }
 
 message SetResponse {
@@ -21,7 +21,7 @@ message GetRequest {
 
 message GetResponse {
     BaseResponse base_res = 1;
-    int32 group_id = 2; // 集群组id，每一组leader/followers集群都是一个集群组
+    int32 sharding_index = 2; // 分片id，每一组leader/followers都是一个分片
 }
 
 message DeleteRequest {

@@ -70,7 +70,7 @@ public class MetaStateMachine implements StateMachine {
             MetaMessage.SetRequest request = MetaMessage.SetRequest.parseFrom(dataBytes);
             keyByteBuffer.putLong(request.getKeySign());
             byte[] keyBytes = keyByteBuffer.array();
-            valueByteBuffer.putInt(request.getGroupId());
+            valueByteBuffer.putInt(request.getShardingIndex());
             byte[] valueBytes = valueByteBuffer.array();
             db.put(keyBytes, valueBytes);
         } catch (Exception ex) {
@@ -89,7 +89,7 @@ public class MetaStateMachine implements StateMachine {
             byte[] valueBytes = db.get(keyBytes);
             if (valueBytes != null) {
                 ByteBuffer valueByteBuffer = ByteBuffer.wrap(valueBytes);
-                responseBuilder.setGroupId(valueByteBuffer.getInt());
+                responseBuilder.setShardingIndex(valueByteBuffer.getInt());
                 baseResBuilder.setResCode(CommonMessage.ResCode.RES_CODE_SUCCESS);
             }
             responseBuilder.setBaseRes(baseResBuilder);

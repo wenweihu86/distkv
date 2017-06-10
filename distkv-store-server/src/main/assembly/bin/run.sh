@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JMX_PORT=18101
+JMX_PORT=18201
 GC_LOG=./logs/gc.log
 #jvm config
 JAVA_BASE_OPTS=" -Djava.awt.headless=true -Dfile.encoding=UTF-8 "

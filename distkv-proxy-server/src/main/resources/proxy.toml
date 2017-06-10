@@ -1,0 +1,45 @@
+port = 8001
+
+[meta_server]
+# meta_server分片
+[[meta_server.sharding]]
+# 第1个分片
+index = 1
+[[meta_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8101
+[[meta_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8102
+[[meta_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8103
+
+[store_server]
+# store_server分片
+[[store_server.sharding]]
+# 第1个分片
+index = 1
+[[store_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8201
+[[store_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8202
+[[store_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8203
+
+# store_server分片
+[[store_server.sharding]]
+# 第2个分片
+index = 2
+[[store_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8301
+[[store_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8302
+[[store_server.sharding.server]]
+ip = "127.0.0.1"
+port = 8303

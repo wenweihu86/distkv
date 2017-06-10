@@ -29,12 +29,12 @@ public final class MetaMessage {
 
     /**
      * <pre>
-     * 集群组id，每一组leader/followers集群都是一个集群组
+     * 分片id，每一组leader/followers都是一个分片
      * </pre>
      *
-     * <code>optional int32 group_id = 2;</code>
+     * <code>optional int32 sharding_index = 2;</code>
      */
-    int getGroupId();
+    int getShardingIndex();
   }
   /**
    * Protobuf type {@code api.SetRequest}
@@ -49,7 +49,7 @@ public final class MetaMessage {
     }
     private SetRequest() {
       keySign_ = 0L;
-      groupId_ = 0;
+      shardingIndex_ = 0;
     }
 
     @java.lang.Override
@@ -84,7 +84,7 @@ public final class MetaMessage {
             }
             case 16: {
 
-              groupId_ = input.readInt32();
+              shardingIndex_ = input.readInt32();
               break;
             }
           }
@@ -123,17 +123,17 @@ public final class MetaMessage {
       return keySign_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 2;
-    private int groupId_;
+    public static final int SHARDING_INDEX_FIELD_NUMBER = 2;
+    private int shardingIndex_;
     /**
      * <pre>
-     * 集群组id，每一组leader/followers集群都是一个集群组
+     * 分片id，每一组leader/followers都是一个分片
      * </pre>
      *
-     * <code>optional int32 group_id = 2;</code>
+     * <code>optional int32 sharding_index = 2;</code>
      */
-    public int getGroupId() {
-      return groupId_;
+    public int getShardingIndex() {
+      return shardingIndex_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -151,8 +151,8 @@ public final class MetaMessage {
       if (keySign_ != 0L) {
         output.writeInt64(1, keySign_);
       }
-      if (groupId_ != 0) {
-        output.writeInt32(2, groupId_);
+      if (shardingIndex_ != 0) {
+        output.writeInt32(2, shardingIndex_);
       }
     }
 
@@ -165,9 +165,9 @@ public final class MetaMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, keySign_);
       }
-      if (groupId_ != 0) {
+      if (shardingIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, groupId_);
+          .computeInt32Size(2, shardingIndex_);
       }
       memoizedSize = size;
       return size;
@@ -187,8 +187,8 @@ public final class MetaMessage {
       boolean result = true;
       result = result && (getKeySign()
           == other.getKeySign());
-      result = result && (getGroupId()
-          == other.getGroupId());
+      result = result && (getShardingIndex()
+          == other.getShardingIndex());
       return result;
     }
 
@@ -202,8 +202,8 @@ public final class MetaMessage {
       hash = (37 * hash) + KEY_SIGN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getKeySign());
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + SHARDING_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getShardingIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -324,7 +324,7 @@ public final class MetaMessage {
         super.clear();
         keySign_ = 0L;
 
-        groupId_ = 0;
+        shardingIndex_ = 0;
 
         return this;
       }
@@ -349,7 +349,7 @@ public final class MetaMessage {
       public com.github.wenweihu86.distkv.api.MetaMessage.SetRequest buildPartial() {
         com.github.wenweihu86.distkv.api.MetaMessage.SetRequest result = new com.github.wenweihu86.distkv.api.MetaMessage.SetRequest(this);
         result.keySign_ = keySign_;
-        result.groupId_ = groupId_;
+        result.shardingIndex_ = shardingIndex_;
         onBuilt();
         return result;
       }
@@ -394,8 +394,8 @@ public final class MetaMessage {
         if (other.getKeySign() != 0L) {
           setKeySign(other.getKeySign());
         }
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
+        if (other.getShardingIndex() != 0) {
+          setShardingIndex(other.getShardingIndex());
         }
         onChanged();
         return this;
@@ -461,40 +461,40 @@ public final class MetaMessage {
         return this;
       }
 
-      private int groupId_ ;
+      private int shardingIndex_ ;
       /**
        * <pre>
-       * 集群组id，每一组leader/followers集群都是一个集群组
+       * 分片id，每一组leader/followers都是一个分片
        * </pre>
        *
-       * <code>optional int32 group_id = 2;</code>
+       * <code>optional int32 sharding_index = 2;</code>
        */
-      public int getGroupId() {
-        return groupId_;
+      public int getShardingIndex() {
+        return shardingIndex_;
       }
       /**
        * <pre>
-       * 集群组id，每一组leader/followers集群都是一个集群组
+       * 分片id，每一组leader/followers都是一个分片
        * </pre>
        *
-       * <code>optional int32 group_id = 2;</code>
+       * <code>optional int32 sharding_index = 2;</code>
        */
-      public Builder setGroupId(int value) {
+      public Builder setShardingIndex(int value) {
         
-        groupId_ = value;
+        shardingIndex_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 集群组id，每一组leader/followers集群都是一个集群组
+       * 分片id，每一组leader/followers都是一个分片
        * </pre>
        *
-       * <code>optional int32 group_id = 2;</code>
+       * <code>optional int32 sharding_index = 2;</code>
        */
-      public Builder clearGroupId() {
+      public Builder clearShardingIndex() {
         
-        groupId_ = 0;
+        shardingIndex_ = 0;
         onChanged();
         return this;
       }
@@ -1576,12 +1576,12 @@ public final class MetaMessage {
 
     /**
      * <pre>
-     * 集群组id，每一组leader/followers集群都是一个集群组
+     * 分片id，每一组leader/followers都是一个分片
      * </pre>
      *
-     * <code>optional int32 group_id = 2;</code>
+     * <code>optional int32 sharding_index = 2;</code>
      */
-    int getGroupId();
+    int getShardingIndex();
   }
   /**
    * Protobuf type {@code api.GetResponse}
@@ -1595,7 +1595,7 @@ public final class MetaMessage {
       super(builder);
     }
     private GetResponse() {
-      groupId_ = 0;
+      shardingIndex_ = 0;
     }
 
     @java.lang.Override
@@ -1638,7 +1638,7 @@ public final class MetaMessage {
             }
             case 16: {
 
-              groupId_ = input.readInt32();
+              shardingIndex_ = input.readInt32();
               break;
             }
           }
@@ -1685,17 +1685,17 @@ public final class MetaMessage {
       return getBaseRes();
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 2;
-    private int groupId_;
+    public static final int SHARDING_INDEX_FIELD_NUMBER = 2;
+    private int shardingIndex_;
     /**
      * <pre>
-     * 集群组id，每一组leader/followers集群都是一个集群组
+     * 分片id，每一组leader/followers都是一个分片
      * </pre>
      *
-     * <code>optional int32 group_id = 2;</code>
+     * <code>optional int32 sharding_index = 2;</code>
      */
-    public int getGroupId() {
-      return groupId_;
+    public int getShardingIndex() {
+      return shardingIndex_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1713,8 +1713,8 @@ public final class MetaMessage {
       if (baseRes_ != null) {
         output.writeMessage(1, getBaseRes());
       }
-      if (groupId_ != 0) {
-        output.writeInt32(2, groupId_);
+      if (shardingIndex_ != 0) {
+        output.writeInt32(2, shardingIndex_);
       }
     }
 
@@ -1727,9 +1727,9 @@ public final class MetaMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRes());
       }
-      if (groupId_ != 0) {
+      if (shardingIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, groupId_);
+          .computeInt32Size(2, shardingIndex_);
       }
       memoizedSize = size;
       return size;
@@ -1752,8 +1752,8 @@ public final class MetaMessage {
         result = result && getBaseRes()
             .equals(other.getBaseRes());
       }
-      result = result && (getGroupId()
-          == other.getGroupId());
+      result = result && (getShardingIndex()
+          == other.getShardingIndex());
       return result;
     }
 
@@ -1768,8 +1768,8 @@ public final class MetaMessage {
         hash = (37 * hash) + BASE_RES_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRes().hashCode();
       }
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + SHARDING_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getShardingIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1894,7 +1894,7 @@ public final class MetaMessage {
           baseRes_ = null;
           baseResBuilder_ = null;
         }
-        groupId_ = 0;
+        shardingIndex_ = 0;
 
         return this;
       }
@@ -1923,7 +1923,7 @@ public final class MetaMessage {
         } else {
           result.baseRes_ = baseResBuilder_.build();
         }
-        result.groupId_ = groupId_;
+        result.shardingIndex_ = shardingIndex_;
         onBuilt();
         return result;
       }
@@ -1968,8 +1968,8 @@ public final class MetaMessage {
         if (other.hasBaseRes()) {
           mergeBaseRes(other.getBaseRes());
         }
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
+        if (other.getShardingIndex() != 0) {
+          setShardingIndex(other.getShardingIndex());
         }
         onChanged();
         return this;
@@ -2114,40 +2114,40 @@ public final class MetaMessage {
         return baseResBuilder_;
       }
 
-      private int groupId_ ;
+      private int shardingIndex_ ;
       /**
        * <pre>
-       * 集群组id，每一组leader/followers集群都是一个集群组
+       * 分片id，每一组leader/followers都是一个分片
        * </pre>
        *
-       * <code>optional int32 group_id = 2;</code>
+       * <code>optional int32 sharding_index = 2;</code>
        */
-      public int getGroupId() {
-        return groupId_;
+      public int getShardingIndex() {
+        return shardingIndex_;
       }
       /**
        * <pre>
-       * 集群组id，每一组leader/followers集群都是一个集群组
+       * 分片id，每一组leader/followers都是一个分片
        * </pre>
        *
-       * <code>optional int32 group_id = 2;</code>
+       * <code>optional int32 sharding_index = 2;</code>
        */
-      public Builder setGroupId(int value) {
+      public Builder setShardingIndex(int value) {
         
-        groupId_ = value;
+        shardingIndex_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 集群组id，每一组leader/followers集群都是一个集群组
+       * 分片id，每一组leader/followers都是一个分片
        * </pre>
        *
-       * <code>optional int32 group_id = 2;</code>
+       * <code>optional int32 sharding_index = 2;</code>
        */
-      public Builder clearGroupId() {
+      public Builder clearShardingIndex() {
         
-        groupId_ = 0;
+        shardingIndex_ = 0;
         onChanged();
         return this;
       }
@@ -3249,16 +3249,16 @@ public final class MetaMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nmeta.proto\022\003api\032\014common.proto\"0\n\nSetRe" +
-      "quest\022\020\n\010key_sign\030\001 \001(\003\022\020\n\010group_id\030\002 \001(" +
-      "\005\"2\n\013SetResponse\022#\n\010base_res\030\001 \001(\0132\021.api" +
-      ".BaseResponse\"\036\n\nGetRequest\022\020\n\010key_sign\030" +
-      "\001 \001(\003\"D\n\013GetResponse\022#\n\010base_res\030\001 \001(\0132\021" +
-      ".api.BaseResponse\022\020\n\010group_id\030\002 \001(\005\"!\n\rD" +
-      "eleteRequest\022\020\n\010key_sign\030\001 \001(\003\"5\n\016Delete" +
-      "Response\022#\n\010base_res\030\001 \001(\0132\021.api.BaseRes" +
-      "ponseB/\n com.github.wenweihu86.distkv.ap" +
-      "iB\013MetaMessageb\006proto3"
+      "\n\nmeta.proto\022\003api\032\014common.proto\"6\n\nSetRe" +
+      "quest\022\020\n\010key_sign\030\001 \001(\003\022\026\n\016sharding_inde" +
+      "x\030\002 \001(\005\"2\n\013SetResponse\022#\n\010base_res\030\001 \001(\013" +
+      "2\021.api.BaseResponse\"\036\n\nGetRequest\022\020\n\010key" +
+      "_sign\030\001 \001(\003\"J\n\013GetResponse\022#\n\010base_res\030\001" +
+      " \001(\0132\021.api.BaseResponse\022\026\n\016sharding_inde" +
+      "x\030\002 \001(\005\"!\n\rDeleteRequest\022\020\n\010key_sign\030\001 \001" +
+      "(\003\"5\n\016DeleteResponse\022#\n\010base_res\030\001 \001(\0132\021" +
+      ".api.BaseResponseB/\n com.github.wenweihu" +
+      "86.distkv.apiB\013MetaMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3278,7 +3278,7 @@ public final class MetaMessage {
     internal_static_api_SetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SetRequest_descriptor,
-        new java.lang.String[] { "KeySign", "GroupId", });
+        new java.lang.String[] { "KeySign", "ShardingIndex", });
     internal_static_api_SetResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_api_SetResponse_fieldAccessorTable = new
@@ -3296,7 +3296,7 @@ public final class MetaMessage {
     internal_static_api_GetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_GetResponse_descriptor,
-        new java.lang.String[] { "BaseRes", "GroupId", });
+        new java.lang.String[] { "BaseRes", "ShardingIndex", });
     internal_static_api_DeleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_api_DeleteRequest_fieldAccessorTable = new
