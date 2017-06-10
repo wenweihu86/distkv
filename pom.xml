@@ -19,6 +19,7 @@
         <module>distkv-proxy-server</module>
         <module>distkv-meta-server</module>
         <module>distkv-store-server</module>
+        <module>distkv-example</module>
     </modules>
 
 </project>

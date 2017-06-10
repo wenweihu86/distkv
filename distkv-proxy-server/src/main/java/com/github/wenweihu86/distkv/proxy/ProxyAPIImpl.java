@@ -4,7 +4,9 @@ import com.github.wenweihu86.distkv.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -23,10 +25,11 @@ public class ProxyAPIImpl implements ProxyAPI {
         // 随机获取store server的sharding index
         long keySign = ProxyUtils.getMd5Sign(request.getKey().toByteArray());
         GlobalBean globalBean = GlobalBean.getInstance();
-        List<ShardingClient> storeServerShardings = globalBean.getStoreServerShardings();
-        int randInt = ThreadLocalRandom.current().nextInt(0, storeServerShardings.size());
-        ShardingClient storeShardingClient = storeServerShardings.get(randInt);
-        int shardingIndex = storeShardingClient.getIndex();
+        Map<Integer, ShardingClient> storeServerShardingMap = globalBean.getStoreServerShardingMap();
+        List<Integer> indexList = new ArrayList<>(storeServerShardingMap.keySet());
+        int randInt = ThreadLocalRandom.current().nextInt(0, indexList.size());
+        int shardingIndex = indexList.get(randInt);
+        ShardingClient storeShardingClient = storeServerShardingMap.get(shardingIndex);
 
         // 请求meta server，保存keySign -> sharding映射信息
         List<ShardingClient> metaServerShardings = globalBean.getMetaServerShadings();
@@ -67,9 +70,9 @@ public class ProxyAPIImpl implements ProxyAPI {
 
         responseBuilder.setBaseRes(storeResponse.getBaseRes());
         ProxyMessage.SetResponse response = responseBuilder.build();
-        LOG.info("proxy server set request, request={}, response={}",
+        LOG.info("proxy server set request, request={}, resCode={}",
                 ProxyUtils.protoToJson(request),
-                ProxyUtils.protoToJson(response));
+                response.getBaseRes().getResCode());
         return response;
     }
 
@@ -98,14 +101,13 @@ public class ProxyAPIImpl implements ProxyAPI {
         int storeShardingIndex = metaResponse.getShardingIndex();
 
         // 请求store server，获取key -> value信息
-        List<ShardingClient> storeServerShardings = globalBean.getStoreServerShardings();
-        if (storeShardingIndex >= storeServerShardings.size()) {
-            LOG.warn("storeShardingIndex={} >= storeServerShardingSize={}",
-                    storeShardingIndex, storeServerShardings.size());
+        Map<Integer, ShardingClient> storeServerShardingMap = globalBean.getStoreServerShardingMap();
+        ShardingClient storeShardingClient = storeServerShardingMap.get(storeShardingIndex);
+        if (storeShardingClient == null) {
+            LOG.warn("storeShardingIndex={} is not found", storeShardingIndex);
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
-        ShardingClient storeShardingClient = storeServerShardings.get(storeShardingIndex);
         StoreMessage.GetRequest storeRequest = StoreMessage.GetRequest.newBuilder()
                 .setKey(request.getKey()).build();
         StoreMessage.GetResponse storeResponse = storeShardingClient.getStoreAPI().get(storeRequest);
@@ -120,9 +122,10 @@ public class ProxyAPIImpl implements ProxyAPI {
         responseBuilder.setBaseRes(storeResponse.getBaseRes());
         responseBuilder.setValue(storeResponse.getValue());
         ProxyMessage.GetResponse response = responseBuilder.build();
-        LOG.info("get request, request={}, response={}",
+        LOG.info("get request, request={}, resCode={}, value={}",
                 ProxyUtils.protoToJson(request),
-                ProxyUtils.protoToJson(response));
+                response.getBaseRes().getResCode(),
+                new String(response.getValue().toByteArray()));
         return response;
     }
 
@@ -151,14 +154,14 @@ public class ProxyAPIImpl implements ProxyAPI {
         int storeShardingIndex = metaResponse.getShardingIndex();
 
         // 请求store server，删除key
-        List<ShardingClient> storeServerShardings = globalBean.getStoreServerShardings();
-        if (storeShardingIndex >= storeServerShardings.size()) {
-            LOG.warn("storeShardingIndex={} >= storeServerShardingSize={}",
-                    storeShardingIndex, storeServerShardings.size());
+        Map<Integer, ShardingClient> storeServerShardingMap = globalBean.getStoreServerShardingMap();
+        ShardingClient storeShardingClient = storeServerShardingMap.get(storeShardingIndex);
+        if (storeShardingClient == null) {
+            LOG.info("storeShardingIndex={} is not found", storeShardingIndex);
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
-        ShardingClient storeShardingClient = storeServerShardings.get(storeShardingIndex);
+
         StoreMessage.DeleteRequest storeRequest = StoreMessage.DeleteRequest.newBuilder()
                 .setKey(request.getKey()).build();
         StoreMessage.DeleteResponse storeResponse = storeShardingClient.getStoreAPI().delete(storeRequest);
@@ -185,9 +188,9 @@ public class ProxyAPIImpl implements ProxyAPI {
 
         responseBuilder.setBaseRes(storeResponse.getBaseRes());
         ProxyMessage.DeleteResponse response = responseBuilder.build();
-        LOG.info("get request, request={}, response={}",
+        LOG.info("delete request, request={}, resCode={}",
                 ProxyUtils.protoToJson(request),
-                ProxyUtils.protoToJson(response));
+                response.getBaseRes().getResCode());
         return response;
     }
 

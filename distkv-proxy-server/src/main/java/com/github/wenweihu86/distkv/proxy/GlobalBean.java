@@ -11,7 +11,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by wenweihu86 on 2017/6/8.
@@ -23,7 +25,7 @@ public class GlobalBean {
 
     private Toml toml;
     private List<ShardingClient> metaServerShadings;
-    private List<ShardingClient> storeServerShardings;
+    private Map<Integer, ShardingClient> storeServerShardingMap;
 
     public GlobalBean() {
         String fileName = "/proxy.toml";
@@ -48,8 +50,8 @@ public class GlobalBean {
         return metaServerShadings;
     }
 
-    public List<ShardingClient> getStoreServerShardings() {
-        return storeServerShardings;
+    public Map<Integer, ShardingClient> getStoreServerShardingMap() {
+        return storeServerShardingMap;
     }
 
     private void initRPCClient() {
@@ -60,7 +62,7 @@ public class GlobalBean {
             shardingClient.setMetaAPI(metaAPI);
         }
 
-        for (ShardingClient shardingClient : storeServerShardings) {
+        for (ShardingClient shardingClient : storeServerShardingMap.values()) {
             RPCClient rpcClient = new RPCClient(shardingClient.getServers());
             shardingClient.setRpcClient(rpcClient);
             StoreAPI storeAPI = RPCProxy.getProxy(rpcClient, StoreAPI.class);
@@ -76,11 +78,12 @@ public class GlobalBean {
             metaServerShadings.add(readShardingConf(shardingConf));
         }
 
-        storeServerShardings = new ArrayList<>();
+        storeServerShardingMap = new HashMap<>();
         Toml storeServerConf = toml.getTable("store_server");
         shardingConfList = storeServerConf.getTables("sharding");
         for (Toml shardingConf : shardingConfList) {
-            storeServerShardings.add(readShardingConf(shardingConf));
+            ShardingClient shardingClient = readShardingConf(shardingConf);
+            storeServerShardingMap.put(shardingClient.getIndex(), shardingClient);
         }
     }
 

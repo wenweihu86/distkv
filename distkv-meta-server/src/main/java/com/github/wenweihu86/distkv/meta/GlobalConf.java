@@ -19,7 +19,7 @@ public class GlobalConf {
     private Toml toml;
 
     public GlobalConf() {
-        String fileName = "/store.toml";
+        String fileName = "/meta.toml";
         File file = new File(getClass().getResource(fileName).getFile());
         toml = new Toml().read(file);
     }

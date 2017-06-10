@@ -59,9 +59,10 @@ public class MetaAPIImpl implements MetaAPI {
     @Override
     public MetaMessage.GetResponse get(MetaMessage.GetRequest request) {
         MetaMessage.GetResponse response = stateMachine.get(request);
-        LOG.info("get request, request={}, response={}",
+        LOG.info("get request, request={}, resCode={}, value={}",
                 ProtobufUtils.protoToJson(request),
-                ProtobufUtils.protoToJson(response));
+                response.getBaseRes().getResCode(),
+                response.getShardingIndex());
         return response;
     }
 
@@ -90,9 +91,9 @@ public class MetaAPIImpl implements MetaAPI {
         }
 
         MetaMessage.DeleteResponse response = responseBuilder.build();
-        LOG.info("delete request, request={}, response={}",
+        LOG.info("delete request, request={}, resCode={}",
                 ProtobufUtils.protoToJson(request),
-                ProtobufUtils.protoToJson(response));
+                response.getBaseRes().getResCode());
         return response;
     }
 
