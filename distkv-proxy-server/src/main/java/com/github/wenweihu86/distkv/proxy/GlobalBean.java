@@ -4,6 +4,7 @@ import com.github.wenweihu86.distkv.api.MetaAPI;
 import com.github.wenweihu86.distkv.api.StoreAPI;
 import com.github.wenweihu86.rpc.client.EndPoint;
 import com.github.wenweihu86.rpc.client.RPCClient;
+import com.github.wenweihu86.rpc.client.RPCClientOptions;
 import com.github.wenweihu86.rpc.client.RPCProxy;
 import com.moandjiezana.toml.Toml;
 import org.slf4j.Logger;
@@ -55,19 +56,39 @@ public class GlobalBean {
     }
 
     private void initRPCClient() {
+        Toml metaServerConf = toml.getTable("meta_server");
+        RPCClientOptions metaOptions = readRPCClientOptions(metaServerConf);
         for (ShardingClient shardingClient : metaServerShadings) {
-            RPCClient rpcClient = new RPCClient(shardingClient.getServers());
+            RPCClient rpcClient = new RPCClient(shardingClient.getServers(), metaOptions);
             shardingClient.setRpcClient(rpcClient);
             MetaAPI metaAPI = RPCProxy.getProxy(rpcClient, MetaAPI.class);
             shardingClient.setMetaAPI(metaAPI);
         }
 
+        Toml storeServerConf = toml.getTable("store_server");
+        RPCClientOptions storeOptions = readRPCClientOptions(storeServerConf);
         for (ShardingClient shardingClient : storeServerShardingMap.values()) {
-            RPCClient rpcClient = new RPCClient(shardingClient.getServers());
+            RPCClient rpcClient = new RPCClient(shardingClient.getServers(), storeOptions);
             shardingClient.setRpcClient(rpcClient);
             StoreAPI storeAPI = RPCProxy.getProxy(rpcClient, StoreAPI.class);
             shardingClient.setStoreAPI(storeAPI);
         }
+    }
+
+    private RPCClientOptions readRPCClientOptions(Toml serverConf) {
+        RPCClientOptions options = new RPCClientOptions();
+        options.setConnectTimeoutMillis(
+                serverConf.getLong("connect_timeout_ms").intValue());
+        options.setWriteTimeoutMillis(
+                serverConf.getLong("write_timeout_ms").intValue());
+        options.setReadTimeoutMillis(
+                serverConf.getLong("read_timeout_ms").intValue());
+        LOG.info("reading rpc client options conf, " +
+                "connect_timeout_ms={}, write_timeout_ms={}, read_timeout_ms={}",
+                options.getConnectTimeoutMillis(),
+                options.getWriteTimeoutMillis(),
+                options.getReadTimeoutMillis());
+        return options;
     }
 
     private void readServerShardingsConf() {

@@ -50,19 +50,25 @@ public class MetaAPIImpl implements MetaAPI {
         }
 
         MetaMessage.SetResponse response = responseBuilder.build();
-        LOG.info("set request, request={}, response={}",
-                ProtobufUtils.protoToJson(request),
-                ProtobufUtils.protoToJson(response));
+        LOG.info("set request, keySign={}, shardingIndex={}, resCode={}, resMsg={}",
+                request.getKeySign(), request.getShardingIndex(),
+                response.getBaseRes().getResCode(),
+                response.getBaseRes().getResMsg());
         return response;
     }
 
     @Override
     public MetaMessage.GetResponse get(MetaMessage.GetRequest request) {
         MetaMessage.GetResponse response = stateMachine.get(request);
-        LOG.info("get request, request={}, resCode={}, value={}",
-                ProtobufUtils.protoToJson(request),
-                response.getBaseRes().getResCode(),
-                response.getShardingIndex());
+        if (response != null) {
+            LOG.info("get request, keySign={}, resCode={}, resMsg={}, shardingIndex={}",
+                    request.getKeySign(),
+                    response.getBaseRes().getResCode(),
+                    response.getBaseRes().getResMsg(),
+                    response.getShardingIndex());
+        } else {
+            LOG.warn("get request, keySign={}, response=null", request.getKeySign());
+        }
         return response;
     }
 
@@ -91,9 +97,10 @@ public class MetaAPIImpl implements MetaAPI {
         }
 
         MetaMessage.DeleteResponse response = responseBuilder.build();
-        LOG.info("delete request, request={}, resCode={}",
-                ProtobufUtils.protoToJson(request),
-                response.getBaseRes().getResCode());
+        LOG.info("delete request, keySign={}, resCode={}, resMsg={}",
+                request.getKeySign(),
+                response.getBaseRes().getResCode(),
+                response.getBaseRes().getResMsg());
         return response;
     }
 

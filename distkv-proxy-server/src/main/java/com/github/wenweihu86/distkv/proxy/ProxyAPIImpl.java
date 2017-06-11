@@ -41,7 +41,8 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (metaResponse == null
                 || metaResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.warn("meta server set request failed, request={}", ProxyUtils.protoToJson(metaRequest));
+            LOG.warn("meta server set request failed, keySign={}, shardingIndex={}",
+                    keySign, shardingIndex);
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
@@ -53,7 +54,8 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (storeResponse == null
                 || storeResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.warn("store server set request failed, request={}", ProxyUtils.protoToJson(storeRequest));
+            LOG.warn("store server set request failed, key={}",
+                    new String(request.getKey().toByteArray()));
             // 再次请求meta server，删除keySign -> sharding映射信息
             MetaMessage.DeleteRequest deleteRequest = MetaMessage.DeleteRequest.newBuilder()
                     .setKeySign(keySign).build();
@@ -62,7 +64,8 @@ public class ProxyAPIImpl implements ProxyAPI {
             if (deleteResponse == null
                     || deleteResponse.getBaseRes().getResCode()
                     != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-                LOG.warn("meta server delete request failed, request={}", ProxyUtils.protoToJson(deleteRequest));
+                LOG.error("meta server delete request failed, should be handled manually, keySign={}",
+                        deleteRequest.getKeySign());
             }
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
@@ -70,9 +73,10 @@ public class ProxyAPIImpl implements ProxyAPI {
 
         responseBuilder.setBaseRes(storeResponse.getBaseRes());
         ProxyMessage.SetResponse response = responseBuilder.build();
-        LOG.info("proxy server set request, request={}, resCode={}",
-                ProxyUtils.protoToJson(request),
-                response.getBaseRes().getResCode());
+        LOG.info("proxy server set request, key={}, resCode={}, resMsg={}",
+                new String(request.getKey().toByteArray()),
+                response.getBaseRes().getResCode(),
+                response.getBaseRes().getResMsg());
         return response;
     }
 
@@ -94,7 +98,7 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (metaResponse == null
                 || metaResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.warn("meta server get request failed, request={}", ProxyUtils.protoToJson(metaRequest));
+            LOG.warn("meta server get request failed, keySign={}", keySign);
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
@@ -114,7 +118,8 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (storeResponse == null
                 || storeResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.warn("store server get request failed, request={}", ProxyUtils.protoToJson(storeRequest));
+            LOG.warn("store server get request failed, key={}",
+                    new String(request.getKey().toByteArray()));
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
@@ -122,10 +127,10 @@ public class ProxyAPIImpl implements ProxyAPI {
         responseBuilder.setBaseRes(storeResponse.getBaseRes());
         responseBuilder.setValue(storeResponse.getValue());
         ProxyMessage.GetResponse response = responseBuilder.build();
-        LOG.info("get request, request={}, resCode={}, value={}",
-                ProxyUtils.protoToJson(request),
+        LOG.info("get request, key={}, resCode={}, resMsg={}",
+                new String(request.getKey().toByteArray()),
                 response.getBaseRes().getResCode(),
-                new String(response.getValue().toByteArray()));
+                response.getBaseRes().getResMsg());
         return response;
     }
 
@@ -147,7 +152,7 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (metaResponse == null
                 || metaResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.warn("meta server get request failed, request={}", ProxyUtils.protoToJson(metaRequest));
+            LOG.warn("meta server get request failed, keySign={}", keySign);
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
@@ -168,7 +173,8 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (storeResponse == null
                 || storeResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.warn("store server delete request failed, request={}", ProxyUtils.protoToJson(storeRequest));
+            LOG.warn("store server delete request failed, key={}",
+                    new String(request.getKey().toByteArray()));
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
@@ -181,16 +187,25 @@ public class ProxyAPIImpl implements ProxyAPI {
         if (metaDeleteResponse == null
                 || metaDeleteResponse.getBaseRes().getResCode()
                 != CommonMessage.ResCode.RES_CODE_SUCCESS) {
-            LOG.error("meta server delete request failed, request={}", ProxyUtils.protoToJson(metaDeleteRequest));
+            if (metaDeleteResponse != null) {
+                LOG.error("meta server delete request failed, should be handled manually, " +
+                                "keySign={}, resCode={}, resMsg={}",
+                        keySign, metaDeleteResponse.getBaseRes().getResCode(),
+                        metaDeleteResponse.getBaseRes().getResMsg());
+            } else {
+                LOG.error("meta server delete request failed, should be handled manually, " +
+                        "keySign={}, response=null", keySign);
+            }
             responseBuilder.setBaseRes(baseResBuilder);
             return responseBuilder.build();
         }
 
         responseBuilder.setBaseRes(storeResponse.getBaseRes());
         ProxyMessage.DeleteResponse response = responseBuilder.build();
-        LOG.info("delete request, request={}, resCode={}",
-                ProxyUtils.protoToJson(request),
-                response.getBaseRes().getResCode());
+        LOG.info("delete request, key={}, resCode={}, resMsg={}",
+                new String(request.getKey().toByteArray()),
+                response.getBaseRes().getResCode(),
+                response.getBaseRes().getResMsg());
         return response;
     }
 

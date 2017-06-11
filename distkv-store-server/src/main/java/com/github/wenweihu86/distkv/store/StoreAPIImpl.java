@@ -50,18 +50,25 @@ public class StoreAPIImpl implements StoreAPI {
         }
 
         StoreMessage.SetResponse response = responseBuilder.build();
-        LOG.info("set request, request={}, response={}",
-                ProtobufUtils.protoToJson(request),
-                ProtobufUtils.protoToJson(response));
+        LOG.info("set request, key={}, resCode={}, resMsg={}",
+                new String(request.getKey().toByteArray()),
+                response.getBaseRes().getResCode(),
+                response.getBaseRes().getResMsg());
         return response;
     }
 
     @Override
     public StoreMessage.GetResponse get(StoreMessage.GetRequest request) {
         StoreMessage.GetResponse response = stateMachine.get(request);
-        LOG.info("get request, request={}, response={}",
-                ProtobufUtils.protoToJson(request),
-                ProtobufUtils.protoToJson(response));
+        if (response != null) {
+            LOG.info("get request, key={}, resCode={}, resMsg={}",
+                    new String(request.getKey().toByteArray()),
+                    response.getBaseRes().getResCode(),
+                    response.getBaseRes().getResMsg());
+        } else {
+            LOG.warn("get request failed, key={}, response=null",
+                    new String(request.getKey().toByteArray()));
+        }
         return response;
     }
 
@@ -90,9 +97,10 @@ public class StoreAPIImpl implements StoreAPI {
         }
 
         StoreMessage.DeleteResponse response = responseBuilder.build();
-        LOG.info("delete request, request={}, response={}",
-                ProtobufUtils.protoToJson(request),
-                ProtobufUtils.protoToJson(response));
+        LOG.info("delete request, key={}, resCode={}, resMsg={}",
+                new String(request.getKey().toByteArray()),
+                response.getBaseRes().getResCode(),
+                response.getBaseRes().getResMsg());
         return response;
     }
 

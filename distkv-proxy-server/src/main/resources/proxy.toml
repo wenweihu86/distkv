@@ -1,6 +1,9 @@
 port = 8001
 
 [meta_server]
+connect_timeout_ms = 200
+write_timeout_ms = 200
+read_timeout_ms = 500
 # meta_server分片
 [[meta_server.sharding]]
 # 第1个分片
@@ -16,6 +19,9 @@ ip = "127.0.0.1"
 port = 8103
 
 [store_server]
+connect_timeout_ms = 200
+write_timeout_ms = 200
+read_timeout_ms = 500
 # store_server分片
 [[store_server.sharding]]
 # 第1个分片
