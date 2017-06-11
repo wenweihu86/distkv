@@ -29,7 +29,3 @@
 * meta-server和store-server都是raft集群，建议部署三节点以上。
 * proxy-server是无状态的，可以部署任意个节点。
 * example模块是spring boot应用，提供了基本的key/value写入/读取使用方法，同时也提供了图片写入/读取的使用方法。
-
-# 后续TODO：
-* 对下游请求的超时设置加入到配置中。
-* 整理相关日志打印，比如避免打印二进制日志。
