@@ -5,7 +5,7 @@
 
     <groupId>com.github.wenweihu86.distkv</groupId>
     <artifactId>distkv-example</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>distkv-example</name>
@@ -39,7 +39,7 @@
         <dependency>
             <groupId>com.github.wenweihu86.distkv</groupId>
             <artifactId>distkv-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.wenweihu86.rpc</groupId>

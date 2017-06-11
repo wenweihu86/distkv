@@ -4,7 +4,7 @@
 
     <groupId>com.github.wenweihu86.distkv</groupId>
     <artifactId>distkv-proxy-server</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>distkv-proxy-server</name>
@@ -96,7 +96,7 @@
         <dependency>
             <groupId>com.github.wenweihu86.distkv</groupId>
             <artifactId>distkv-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.wenweihu86.rpc</groupId>
