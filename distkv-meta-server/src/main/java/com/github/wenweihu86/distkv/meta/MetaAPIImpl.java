@@ -7,6 +7,7 @@ import com.github.wenweihu86.raft.RaftNode;
 import com.github.wenweihu86.raft.proto.RaftMessage;
 import com.github.wenweihu86.rpc.client.RPCClient;
 import com.github.wenweihu86.rpc.client.RPCProxy;
+import io.netty.buffer.ByteBuf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +42,8 @@ public class MetaAPIImpl implements MetaAPI {
             responseBuilder.mergeFrom(responseFromLeader);
         } else {
             // 数据同步写入raft集群
-            byte[] data = request.toByteArray();
+            RaftDataPacket packet = RaftDataPacket.buildPacket(CommonMessage.RequestType.SET, request);
+            byte[] data = RaftDataPacket.encode(packet);
             boolean success = raftNode.replicate(data, RaftMessage.EntryType.ENTRY_TYPE_DATA);
             baseResBuilder.setResCode(
                     success ? CommonMessage.ResCode.RES_CODE_SUCCESS
@@ -88,7 +90,8 @@ public class MetaAPIImpl implements MetaAPI {
             responseBuilder.mergeFrom(responseFromLeader);
         } else {
             // 数据同步写入raft集群
-            byte[] data = request.toByteArray();
+            RaftDataPacket packet = RaftDataPacket.buildPacket(CommonMessage.RequestType.DELETE, request);
+            byte[] data = RaftDataPacket.encode(packet);
             boolean success = raftNode.replicate(data, RaftMessage.EntryType.ENTRY_TYPE_DATA);
             baseResBuilder.setResCode(
                     success ? CommonMessage.ResCode.RES_CODE_SUCCESS

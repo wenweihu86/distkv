@@ -1,5 +1,6 @@
 package com.github.wenweihu86.distkv.store;
 
+import com.github.wenweihu86.distkv.api.CommonMessage;
 import com.github.wenweihu86.distkv.api.StoreMessage;
 import com.github.wenweihu86.raft.StateMachine;
 import com.google.protobuf.ByteString;
@@ -68,11 +69,18 @@ public class StoreStateMachine implements StateMachine {
 
     @Override
     public void apply(byte[] dataBytes) {
+        RaftDataPacket packet = RaftDataPacket.decode(dataBytes);
         try {
-            StoreMessage.SetRequest request = StoreMessage.SetRequest.parseFrom(dataBytes);
-            db.put(request.getKey().toByteArray(), request.getValue().toByteArray());
+            if (packet.getMeta().getRequestType() == CommonMessage.RequestType.SET) {
+                StoreMessage.SetRequest request = (StoreMessage.SetRequest) packet.getMessage();
+                db.put(request.getKey().toByteArray(), request.getValue().toByteArray());
+            } else if (packet.getMeta().getRequestType() == CommonMessage.RequestType.DELETE) {
+                StoreMessage.DeleteRequest request = (StoreMessage.DeleteRequest) packet.getMessage();
+                db.delete(request.getKey().toByteArray());
+            }
         } catch (Exception ex) {
             LOG.warn("apply meet exception: ", ex);
+            throw new RuntimeException(ex);
         }
     }
 

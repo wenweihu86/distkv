@@ -13,3 +13,13 @@ message BaseResponse {
     ResCode res_code = 1;
     string res_msg = 2;
 }
+
+enum RequestType {
+    SET = 0;
+    DELETE = 1;
+    GET = 2;
+}
+
+message RaftMetaData {
+    RequestType requestType = 1;
+}

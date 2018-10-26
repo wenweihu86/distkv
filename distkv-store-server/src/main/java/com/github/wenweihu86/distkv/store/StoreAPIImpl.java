@@ -41,7 +41,8 @@ public class StoreAPIImpl implements StoreAPI {
             responseBuilder.mergeFrom(responseFromLeader);
         } else {
             // 数据同步写入raft集群
-            byte[] data = request.toByteArray();
+            RaftDataPacket packet = RaftDataPacket.buildPacket(CommonMessage.RequestType.SET, request);
+            byte[] data = RaftDataPacket.encode(packet);
             boolean success = raftNode.replicate(data, RaftMessage.EntryType.ENTRY_TYPE_DATA);
             baseResBuilder.setResCode(
                     success ? CommonMessage.ResCode.RES_CODE_SUCCESS
@@ -88,7 +89,8 @@ public class StoreAPIImpl implements StoreAPI {
             responseBuilder.mergeFrom(responseFromLeader);
         } else {
             // 数据同步写入raft集群
-            byte[] data = request.toByteArray();
+            RaftDataPacket packet = RaftDataPacket.buildPacket(CommonMessage.RequestType.DELETE, request);
+            byte[] data = RaftDataPacket.encode(packet);
             boolean success = raftNode.replicate(data, RaftMessage.EntryType.ENTRY_TYPE_DATA);
             baseResBuilder.setResCode(
                     success ? CommonMessage.ResCode.RES_CODE_SUCCESS

@@ -112,6 +112,113 @@ public final class CommonMessage {
     // @@protoc_insertion_point(enum_scope:api.ResCode)
   }
 
+  /**
+   * Protobuf enum {@code api.RequestType}
+   */
+  public enum RequestType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SET = 0;</code>
+     */
+    SET(0),
+    /**
+     * <code>DELETE = 1;</code>
+     */
+    DELETE(1),
+    /**
+     * <code>GET = 2;</code>
+     */
+    GET(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SET = 0;</code>
+     */
+    public static final int SET_VALUE = 0;
+    /**
+     * <code>DELETE = 1;</code>
+     */
+    public static final int DELETE_VALUE = 1;
+    /**
+     * <code>GET = 2;</code>
+     */
+    public static final int GET_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RequestType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RequestType forNumber(int value) {
+      switch (value) {
+        case 0: return SET;
+        case 1: return DELETE;
+        case 2: return GET;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RequestType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        RequestType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RequestType>() {
+            public RequestType findValueByNumber(int number) {
+              return RequestType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.github.wenweihu86.distkv.api.CommonMessage.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final RequestType[] VALUES = values();
+
+    public static RequestType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RequestType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.RequestType)
+  }
+
   public interface BaseResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.BaseResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -707,11 +814,474 @@ public final class CommonMessage {
 
   }
 
+  public interface RaftMetaDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.RaftMetaData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .api.RequestType requestType = 1;</code>
+     */
+    int getRequestTypeValue();
+    /**
+     * <code>optional .api.RequestType requestType = 1;</code>
+     */
+    com.github.wenweihu86.distkv.api.CommonMessage.RequestType getRequestType();
+  }
+  /**
+   * Protobuf type {@code api.RaftMetaData}
+   */
+  public  static final class RaftMetaData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.RaftMetaData)
+      RaftMetaDataOrBuilder {
+    // Use RaftMetaData.newBuilder() to construct.
+    private RaftMetaData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RaftMetaData() {
+      requestType_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RaftMetaData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              requestType_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_RaftMetaData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_RaftMetaData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.class, com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.Builder.class);
+    }
+
+    public static final int REQUESTTYPE_FIELD_NUMBER = 1;
+    private int requestType_;
+    /**
+     * <code>optional .api.RequestType requestType = 1;</code>
+     */
+    public int getRequestTypeValue() {
+      return requestType_;
+    }
+    /**
+     * <code>optional .api.RequestType requestType = 1;</code>
+     */
+    public com.github.wenweihu86.distkv.api.CommonMessage.RequestType getRequestType() {
+      com.github.wenweihu86.distkv.api.CommonMessage.RequestType result = com.github.wenweihu86.distkv.api.CommonMessage.RequestType.valueOf(requestType_);
+      return result == null ? com.github.wenweihu86.distkv.api.CommonMessage.RequestType.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (requestType_ != com.github.wenweihu86.distkv.api.CommonMessage.RequestType.SET.getNumber()) {
+        output.writeEnum(1, requestType_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requestType_ != com.github.wenweihu86.distkv.api.CommonMessage.RequestType.SET.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, requestType_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData)) {
+        return super.equals(obj);
+      }
+      com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData other = (com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData) obj;
+
+      boolean result = true;
+      result = result && requestType_ == other.requestType_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + REQUESTTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + requestType_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.RaftMetaData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.RaftMetaData)
+        com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_RaftMetaData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_RaftMetaData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.class, com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.Builder.class);
+      }
+
+      // Construct using com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        requestType_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.wenweihu86.distkv.api.CommonMessage.internal_static_api_RaftMetaData_descriptor;
+      }
+
+      public com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData getDefaultInstanceForType() {
+        return com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.getDefaultInstance();
+      }
+
+      public com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData build() {
+        com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData buildPartial() {
+        com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData result = new com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData(this);
+        result.requestType_ = requestType_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData) {
+          return mergeFrom((com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData other) {
+        if (other == com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData.getDefaultInstance()) return this;
+        if (other.requestType_ != 0) {
+          setRequestTypeValue(other.getRequestTypeValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int requestType_ = 0;
+      /**
+       * <code>optional .api.RequestType requestType = 1;</code>
+       */
+      public int getRequestTypeValue() {
+        return requestType_;
+      }
+      /**
+       * <code>optional .api.RequestType requestType = 1;</code>
+       */
+      public Builder setRequestTypeValue(int value) {
+        requestType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .api.RequestType requestType = 1;</code>
+       */
+      public com.github.wenweihu86.distkv.api.CommonMessage.RequestType getRequestType() {
+        com.github.wenweihu86.distkv.api.CommonMessage.RequestType result = com.github.wenweihu86.distkv.api.CommonMessage.RequestType.valueOf(requestType_);
+        return result == null ? com.github.wenweihu86.distkv.api.CommonMessage.RequestType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .api.RequestType requestType = 1;</code>
+       */
+      public Builder setRequestType(com.github.wenweihu86.distkv.api.CommonMessage.RequestType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        requestType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .api.RequestType requestType = 1;</code>
+       */
+      public Builder clearRequestType() {
+        
+        requestType_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.RaftMetaData)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.RaftMetaData)
+    private static final com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData();
+    }
+
+    public static com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RaftMetaData>
+        PARSER = new com.google.protobuf.AbstractParser<RaftMetaData>() {
+      public RaftMetaData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RaftMetaData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RaftMetaData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RaftMetaData> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.wenweihu86.distkv.api.CommonMessage.RaftMetaData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_BaseResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_BaseResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_RaftMetaData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_RaftMetaData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -723,9 +1293,12 @@ public final class CommonMessage {
     java.lang.String[] descriptorData = {
       "\n\014common.proto\022\003api\"?\n\014BaseResponse\022\036\n\010r" +
       "es_code\030\001 \001(\0162\014.api.ResCode\022\017\n\007res_msg\030\002" +
-      " \001(\t*2\n\007ResCode\022\024\n\020RES_CODE_SUCCESS\020\000\022\021\n" +
-      "\rRES_CODE_FAIL\020\001B1\n com.github.wenweihu8" +
-      "6.distkv.apiB\rCommonMessageb\006proto3"
+      " \001(\t\"5\n\014RaftMetaData\022%\n\013requestType\030\001 \001(" +
+      "\0162\020.api.RequestType*2\n\007ResCode\022\024\n\020RES_CO" +
+      "DE_SUCCESS\020\000\022\021\n\rRES_CODE_FAIL\020\001*+\n\013Reque" +
+      "stType\022\007\n\003SET\020\000\022\n\n\006DELETE\020\001\022\007\n\003GET\020\002B1\n " +
+      "com.github.wenweihu86.distkv.apiB\rCommon" +
+      "Messageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -745,6 +1318,12 @@ public final class CommonMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_BaseResponse_descriptor,
         new java.lang.String[] { "ResCode", "ResMsg", });
+    internal_static_api_RaftMetaData_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_api_RaftMetaData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_RaftMetaData_descriptor,
+        new java.lang.String[] { "RequestType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

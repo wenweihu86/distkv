@@ -69,17 +69,30 @@ public class MetaStateMachine implements StateMachine {
 
     @Override
     public void apply(byte[] dataBytes) {
-        ByteBuffer keyByteBuffer = ByteBuffer.allocate(8);
-        ByteBuffer valueByteBuffer = ByteBuffer.allocate(4);
+        RaftDataPacket packet = RaftDataPacket.decode(dataBytes);
         try {
-            MetaMessage.SetRequest request = MetaMessage.SetRequest.parseFrom(dataBytes);
-            keyByteBuffer.putLong(request.getKeySign());
-            byte[] keyBytes = keyByteBuffer.array();
-            valueByteBuffer.putInt(request.getShardingIndex());
-            byte[] valueBytes = valueByteBuffer.array();
-            db.put(keyBytes, valueBytes);
+            if (packet.getMeta().getRequestType() == CommonMessage.RequestType.SET) {
+                MetaMessage.SetRequest request = (MetaMessage.SetRequest) packet.getMessage();
+                ByteBuffer keyByteBuffer = ByteBuffer.allocate(8);
+                keyByteBuffer.putLong(request.getKeySign());
+                byte[] keyBytes = keyByteBuffer.array();
+
+                ByteBuffer valueByteBuffer = ByteBuffer.allocate(4);
+                valueByteBuffer.putInt(request.getShardingIndex());
+                byte[] valueBytes = valueByteBuffer.array();
+
+                db.put(keyBytes, valueBytes);
+            } else if (packet.getMeta().getRequestType() == CommonMessage.RequestType.DELETE) {
+                MetaMessage.DeleteRequest request = (MetaMessage.DeleteRequest) packet.getMessage();
+                ByteBuffer keyByteBuffer = ByteBuffer.allocate(8);
+                keyByteBuffer.putLong(request.getKeySign());
+                byte[] keyBytes = keyByteBuffer.array();
+
+                db.delete(keyBytes);
+            }
         } catch (Exception ex) {
             LOG.warn("apply meet exception: ", ex);
+            throw new RuntimeException(ex);
         }
     }
 
