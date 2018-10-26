@@ -2,7 +2,6 @@ package com.github.wenweihu86.distkv.meta;
 
 import com.github.wenweihu86.distkv.api.CommonMessage;
 import com.github.wenweihu86.distkv.api.MetaMessage;
-import com.github.wenweihu86.raft.RaftOptions;
 import com.github.wenweihu86.raft.StateMachine;
 import org.apache.commons.io.FileUtils;
 import org.rocksdb.Checkpoint;
@@ -21,12 +20,16 @@ import java.nio.ByteBuffer;
 public class MetaStateMachine implements StateMachine {
 
     private static final Logger LOG = LoggerFactory.getLogger(MetaStateMachine.class);
-
     static {
         RocksDB.loadLibrary();
     }
 
     private RocksDB db;
+    private String dataDir;
+
+    public MetaStateMachine(String dataDir) {
+        this.dataDir = dataDir + File.separator + "rocksdb_data";;
+    }
 
     @Override
     public void writeSnapshot(String snapshotDir) {
@@ -47,7 +50,6 @@ public class MetaStateMachine implements StateMachine {
             if (db != null) {
                 db.close();
             }
-            String dataDir = RaftOptions.dataDir + File.separator + "rocksdb_data";
             File dataFile = new File(dataDir);
             if (dataFile.exists()) {
                 FileUtils.deleteDirectory(dataFile);

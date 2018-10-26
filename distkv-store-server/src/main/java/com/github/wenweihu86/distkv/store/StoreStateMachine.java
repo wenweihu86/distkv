@@ -1,7 +1,6 @@
 package com.github.wenweihu86.distkv.store;
 
 import com.github.wenweihu86.distkv.api.StoreMessage;
-import com.github.wenweihu86.raft.RaftOptions;
 import com.github.wenweihu86.raft.StateMachine;
 import com.google.protobuf.ByteString;
 import org.apache.commons.io.FileUtils;
@@ -18,8 +17,12 @@ import java.io.File;
  * Created by wenweihu86 on 2017/6/8.
  */
 public class StoreStateMachine implements StateMachine {
-
     private static final Logger LOG = LoggerFactory.getLogger(StoreStateMachine.class);
+    private String dataDir;
+
+    public StoreStateMachine(String dataDir) {
+        this.dataDir = dataDir + File.separator + "rocksdb_data";;
+    }
 
     static {
         RocksDB.loadLibrary();
@@ -46,7 +49,6 @@ public class StoreStateMachine implements StateMachine {
             if (db != null) {
                 db.close();
             }
-            String dataDir = RaftOptions.dataDir + File.separator + "rocksdb_data";
             File dataFile = new File(dataDir);
             if (dataFile.exists()) {
                 FileUtils.deleteDirectory(dataFile);

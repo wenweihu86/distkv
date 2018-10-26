@@ -25,11 +25,12 @@ public class StoreMain {
         // 初始化RPCServer
         RPCServer server = new RPCServer(localServer.getEndPoint().getPort());
         // 应用状态机
-        StoreStateMachine stateMachine = new StoreStateMachine();
+        StoreStateMachine stateMachine = new StoreStateMachine(dataDir);
+        RaftOptions options = new RaftOptions();
         // 设置数据目录
-        RaftOptions.dataDir = dataDir;
+        options.setDataDir(dataDir);
         // 初始化RaftNode
-        RaftNode raftNode = new RaftNode(servers, localServer, stateMachine);
+        RaftNode raftNode = new RaftNode(options, servers, localServer, stateMachine);
         // 注册Raft节点之间相互调用的服务
         RaftConsensusService raftConsensusService = new RaftConsensusServiceImpl(raftNode);
         server.registerService(raftConsensusService);
