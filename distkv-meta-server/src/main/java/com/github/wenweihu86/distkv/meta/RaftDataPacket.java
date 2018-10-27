@@ -47,6 +47,7 @@ public class RaftDataPacket {
         int totalLen = FIXED_HEADER_LEN + metaLen + messageLen;
         byte[] outBytes = new byte[totalLen];
         ByteBuf outBuf = Unpooled.wrappedBuffer(outBytes);
+        outBuf.clear();
         outBuf.writeInt(metaLen);
         outBuf.writeInt(messageLen);
 
@@ -65,7 +66,7 @@ public class RaftDataPacket {
 
         RaftDataHeader header = new RaftDataHeader();
         header.setMetaLength(byteBuf.readInt());
-        header.setMetaLength(byteBuf.readInt());
+        header.setMessageLenth(byteBuf.readInt());
         packet.setHeader(header);
 
         if (byteBuf.readableBytes() != header.getMetaLength() + header.getMessageLenth()) {

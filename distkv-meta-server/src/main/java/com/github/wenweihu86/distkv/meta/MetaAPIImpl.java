@@ -7,7 +7,6 @@ import com.github.wenweihu86.raft.RaftNode;
 import com.github.wenweihu86.raft.proto.RaftMessage;
 import com.github.wenweihu86.rpc.client.RPCClient;
 import com.github.wenweihu86.rpc.client.RPCProxy;
-import io.netty.buffer.ByteBuf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

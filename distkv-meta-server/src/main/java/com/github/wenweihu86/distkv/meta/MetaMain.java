@@ -1,5 +1,6 @@
 package com.github.wenweihu86.distkv.meta;
 
+import com.github.wenweihu86.distkv.api.MetaAPI;
 import com.github.wenweihu86.raft.RaftNode;
 import com.github.wenweihu86.raft.RaftOptions;
 import com.github.wenweihu86.raft.proto.RaftMessage;
@@ -38,8 +39,8 @@ public class MetaMain {
         RaftClientService raftClientService = new RaftClientServiceImpl(raftNode);
         server.registerService(raftClientService);
         // 注册应用自己提供的服务
-        MetaAPIImpl storeAPI = new MetaAPIImpl(raftNode, stateMachine);
-        server.registerService(storeAPI);
+        MetaAPI metaAPI = new MetaAPIImpl(raftNode, stateMachine);
+        server.registerService(metaAPI);
         // 启动RPCServer，初始化Raft节点
         server.start();
         raftNode.init();
