@@ -3,6 +3,7 @@ package com.github.wenweihu86.distkv.example.config;
 import com.github.wenweihu86.distkv.api.ProxyAPI;
 import com.github.wenweihu86.rpc.client.RPCClient;
 import com.github.wenweihu86.rpc.client.RPCProxy;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,20 +22,9 @@ public class RPCClientConfig {
 
     @Bean
     public ProxyAPI proxyAPI() {
-        System.out.println(servers.size());
-        StringBuilder sb = new StringBuilder();
-        boolean isFirst = true;
-        for (String ipPort : servers) {
-            if (isFirst) {
-                sb.append(ipPort);
-            } else {
-                sb.append(";").append(ipPort);
-            }
-        }
-        String ipPorts = sb.toString();
+        String ipPorts = StringUtils.join(servers, ",");
         RPCClient rpcClient = new RPCClient(ipPorts);
-        ProxyAPI proxyAPI = RPCProxy.getProxy(rpcClient, ProxyAPI.class);
-        return proxyAPI;
+        return RPCProxy.getProxy(rpcClient, ProxyAPI.class);
     }
 
     public List<String> getServers() {

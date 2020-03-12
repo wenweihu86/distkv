@@ -7,10 +7,6 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.MediaType;
-
-import javax.print.attribute.standard.Media;
-import java.math.BigInteger;
 
 /**
  * Created by wenweihu86 on 2017/6/8.
